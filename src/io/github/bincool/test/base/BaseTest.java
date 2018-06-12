@@ -49,6 +49,6 @@ public abstract class BaseTest
 	public abstract void tearDown() throws Exception;
 
 	@Test
-	public abstract void test();
+	public abstract void test() throws Exception;
 
 }
