@@ -28,7 +28,7 @@ import java.util.Random;
 * 详细描述:
 * 1 无参构造函数，默认为6位随机码仓库，4位数字2位字母.
 * 2 有参数构造函数，参数为随机码长度和字母个数，其中随机码长度约束为1~256，字母长度约束为0~length.
-* 3 生产(单个/批量)随机码放入随机码仓库，当仓库中有此随机码时不放入.
+* 3 生产(单个/批量/自定义)随机码放入随机码仓库，当仓库中有此随机码时不放入.
 * 4 获取当前随机码，是最近一次生成成功的随机码.
 * 5 获取随机码，随机码来自随机码仓库.
 * </p>
@@ -58,26 +58,26 @@ public class MakeRandCode
      * 随机生成器.
      */
     private static final Random random = new Random();
+    
+    /**
+     * 当前随机码，生成随机码成功后，用户可以通过方法接口获取该值;生成失败则为上一次成功的随机码.
+     */
+    private StringBuffer code = new StringBuffer();
 
     /**
-     * 随机码库,每个任务使用一个内存对象.
+     * 随机码仓库,每个任务使用一个内存对象.
      */
     private Map<String, String> codeMap = new HashMap<String, String>();
+    
+    /**
+     * 随机码下标索引顺序随机打乱,每个任务使用一个内存对象.
+     */
+    private List<Integer> codeOrder = new ArrayList<Integer>();
 
     /**
      * 缓存数据快,每个任务使用一个内存对象.
      */
     private StringBuffer sb = new StringBuffer();
-
-    /**
-     * 随机打乱顺序,每个任务使用一个内存对象.
-     */
-    private List<Integer> codeOrder = new ArrayList<Integer>();
-
-    /**
-     * 当前随机码，生成随机码成功后，用户可以通过方法接口获取该值;生成失败则为上一次成功的随机码.
-     */
-    private StringBuffer code = new StringBuffer();
     
     /**
      * 随机码长度.
@@ -217,19 +217,6 @@ public class MakeRandCode
 
         return ret;
 	}
-    
-    /**
-     * 获取正则替换字符数量长度.
-     * @param str
-     * 		待正则替换的字符串.
-     * @param regex
-     * 		正则表达式.
-     * @return
-     */
-    private int regexCount(String str, String regex) 
-    {
-    	return str.length() - str.replaceAll(regex, "").length();
-    }
 
     /**
      * 获取当前随机码，是最近一次生成成功的随机码.
@@ -259,6 +246,19 @@ public class MakeRandCode
     	String[] keys = codeMap.keySet().toArray(new String[0]);
     	return codeMap.get(keys[random.nextInt(keys.length)]);
 	}
+    
+    /**
+     * 获取正则替换字符数量长度.
+     * @param str
+     * 		待正则替换的字符串.
+     * @param regex
+     * 		正则表达式.
+     * @return
+     */
+    private int regexCount(String str, String regex) 
+    {
+    	return str.length() - str.replaceAll(regex, "").length();
+    }
 
 }
 
