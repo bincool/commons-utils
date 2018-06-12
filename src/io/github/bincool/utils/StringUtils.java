@@ -21,7 +21,7 @@ package io.github.bincool.utils;
 * 字符串工具类：常见的字符串处理方法.
 * </p>
 * <p>
-* TODO 示例代码.
+* 示例代码.
 * </p>
 *
 * @Author: wchy，技术交流(891946049).
