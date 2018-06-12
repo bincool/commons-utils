@@ -190,6 +190,46 @@ public class MakeRandCode
     		}
     	}
     }
+    
+    /**
+     * 外部随机码放入随机码仓库,保证仓库随机码不重复,成功返回true.
+     * @param code
+     */
+    public boolean createRandCode(String code) 
+    {
+    	boolean ret = true;
+    	
+		// 校验code是否符合随机码仓库的随机码规则.
+    	if (length != code.length() || digitCount != regexCount(code, "\\d") || letterCount != regexCount(code, "[A-Z]")) 
+    	{
+    		throw new IllegalArgumentException("The data entered is illegal.");
+    	} 
+    	
+    	// 已经存在此随机码则返回false，task不操作，继续while.
+        if (codeMap.containsKey(code.toString()))
+        {
+            ret = false;
+        }
+        else
+        {
+            codeMap.put(code.toString(), code.toString());
+        }
+
+        return ret;
+	}
+    
+    /**
+     * 获取正则替换字符数量长度.
+     * @param str
+     * 		待正则替换的字符串.
+     * @param regex
+     * 		正则表达式.
+     * @return
+     */
+    private int regexCount(String str, String regex) 
+    {
+    	return str.length() - str.replaceAll(regex, "").length();
+    }
 
     /**
      * 获取当前随机码，是最近一次生成成功的随机码.
