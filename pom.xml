@@ -9,13 +9,14 @@
 		<!-- junit版本号 -->
 		<junit.version>4.11</junit.version>
 	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 			<!-- 表示开发的时候引入，发布的时候不会加载此包 -->
-
+			<scope>test</scope>
 		</dependency>
 
 		<!-- io工具包 -->
@@ -39,29 +40,17 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.0.2</version>
-				<configuration>
-					<archive>
-						<manifestEntries>
-							<Class-Path>.</Class-Path>
-						</manifestEntries>
-					</archive>
-					<excludes>
-						<!--排除一些不需要打包的class文件，此处是排除aboutjar包下的所有class文件 -->
-						<exclude>io/github/bincool/bean/*</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.6.1</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+					<excludes>
+						<exclude>**/io/github/bincool/test/**</exclude>
+					</excludes>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
+	
 </project>
