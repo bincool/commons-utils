@@ -16,7 +16,7 @@
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 			<!-- 表示开发的时候引入，发布的时候不会加载此包 -->
-			<scope>test</scope>
+			<!-- <scope>test</scope> -->
 		</dependency>
 
 		<!-- io工具包 -->
@@ -45,11 +45,28 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
-					<excludes>
+					<!-- <excludes>
 						<exclude>**/io/github/bincool/test/**</exclude>
+					</excludes> -->
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.0.2</version>
+				<configuration>
+					<archive>
+						<manifestEntries>
+							<Class-Path>.</Class-Path>
+						</manifestEntries>
+					</archive>
+					<excludes>
+						<exclude>io/github/bincool/test/**</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
+			
 		</plugins>
 	</build>
 	
