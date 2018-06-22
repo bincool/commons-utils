@@ -2,13 +2,15 @@
 * @FileName: FileHelperTest.java
 * @Package: io.github.bincool.test
 * @Copyright: 2018 bincool.github.io Inc. All Rights Reserved.
-* @Description: FileHelperTest.java: TODO 一句话描述文件的作用.
+* @Description: FileHelperTest.java: 文件帮助类测试.
 * @Author wchy，技术交流(891946049).
 * @Date 2018年6月22日 下午4:42:49.
 * @Content: 新增.
 * @Version: V1.0.
 */
 package io.github.bincool.test;
+
+import org.junit.Test;
 
 import io.github.bincool.test.base.BaseTest;
 import io.github.bincool.utils.FileHelper;
@@ -19,13 +21,13 @@ import io.github.bincool.utils.commons.StringUtils;
 * 
 * @Description: 
 * <p>
-* TODO 一句话对这个类进行描述.
+* 文件帮助类测试.
 * </p>
 * <p>
-* TODO 详细描述.
+* 详细描述.
 * </p>
 * <p>
-* TODO 示例代码.
+* 示例代码.
 * </p>
 *
 * @Author: wchy，技术交流(891946049).
@@ -67,9 +69,46 @@ public class FileHelperTest extends BaseTest
 	{
 		String srcPathname = StringUtils.spliceStr("", basePath, "a.txt");
 		String destPathname = StringUtils.spliceStr("", basePath, "b.txt");
-
-		System.out.println(srcPathname);
+		
 		FileHelper.copyFile(srcPathname, destPathname);
+	}
+	
+	/**
+	 * 删除文件测试.
+	 * @throws Exception
+	 */
+	@Test
+	public void testDeleteFile() throws Exception 
+	{
+		String srcPathname = StringUtils.spliceStr("", basePath, "a.txt");
+		String destPathname = StringUtils.spliceStr("", basePath, "b.txt");
+		
+		FileHelper.copyFile(srcPathname, destPathname);
+		FileHelper.deleteFile(srcPathname);
+	}
+	
+	/**
+	 * 移动文件测试.
+	 * @throws Exception
+	 */
+	@Test
+	public void testMoveFile() throws Exception 
+	{
+		String srcPathname = StringUtils.spliceStr("", basePath, "a1.txt");
+		String destPathname = StringUtils.spliceStr("", basePath, "b1.txt");
+		
+		FileHelper.createFile(srcPathname);
+		FileHelper.moveFile(srcPathname, destPathname);
+	}
+	
+	@Test
+	public void testWriteFile() throws Exception 
+	{
+		String srcPathname = StringUtils.spliceStr("", basePath, "a11.txt");
+		
+		FileHelper.createFile(srcPathname);
+		FileHelper.writeStringToFile(srcPathname, "Hello ");
+		FileHelper.writeStringToFile(srcPathname, "World!\n");
 	}
 
 }

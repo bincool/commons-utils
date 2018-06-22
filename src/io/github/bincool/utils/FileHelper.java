@@ -12,6 +12,7 @@ package io.github.bincool.utils;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 
@@ -88,5 +89,75 @@ public class FileHelper
 		File destFile = new File(destPathname);
         FileUtils.copyFile(srcFile, destFile);
     }
+	
+	/**
+	 * 移动srcFile文件到destFile文件.
+	 * @param srcPathname
+	 * 		srcFile文件的全路径.
+	 * @param destPathname
+	 * 		destFile文件的全路径.
+	 * @throws IOException
+	 * 		文件操作异常.
+	 */
+	public static void moveFile(String srcPathname, String destPathname) throws IOException 
+	{
+		File srcFile = new File(srcPathname);
+		File destFile = new File(destPathname);
+		FileUtils.moveFile(srcFile, destFile);
+	}
+	
+	/**
+	 * 删除文件.
+	 * @param delPathname
+	 * 		delFile文件的全路径.
+	 * @throws IOException
+	 * 		文件操作异常.
+	 */
+	public static void deleteFile(String delPathname) throws IOException 
+	{
+		File delFile = new File(delPathname);
+		FileUtils.forceDelete(delFile);
+	}
+	
+	/**
+	 * 写入文件内容.
+	 * @param srcPathname
+	 * 		srcFile文件的全路径.
+	 * @param context
+	 * 		内容.
+	 * @throws IOException
+	 * 		文件操作异常.
+	 */
+	public static void writeStringToFile(String srcPathname, String context) throws IOException 
+	{
+		File srcFile = new File(srcPathname);
+		FileUtils.writeStringToFile(srcFile, context, true);
+	}
+	
+	/**
+	 * 读取文件到字符串.
+	 * @param srcPathname
+	 * 		srcFile文件的全路径.
+	 * @throws IOException
+	 * 		文件操作异常.
+	 */
+	public static String readFileToString(String srcPathname) throws IOException 
+	{
+		File srcFile = new File(srcPathname);
+        return FileUtils.readFileToString(srcFile);
+	}
+	
+	/**
+	 * 读取文件到list.
+	 * @param srcPathname
+	 * 		srcFile文件的全路径.
+	 * @throws IOException
+	 * 		文件操作异常.
+	 */
+	public static List<String> readLines(String srcPathname) throws IOException 
+	{
+		File srcFile = new File(srcPathname);
+		return FileUtils.readLines(srcFile);
+	}
 	
 }
