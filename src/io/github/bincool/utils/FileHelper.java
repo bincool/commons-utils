@@ -125,13 +125,15 @@ public class FileHelper
 	 * 		srcFile文件的全路径.
 	 * @param context
 	 * 		内容.
+	 * @param append
+	 * 		追加.
 	 * @throws IOException
 	 * 		文件操作异常.
 	 */
-	public static void writeStringToFile(String srcPathname, String context) throws IOException 
+	public static void writeStringToFile(String srcPathname, String context, boolean append) throws IOException 
 	{
 		File srcFile = new File(srcPathname);
-		FileUtils.writeStringToFile(srcFile, context, true);
+		FileUtils.writeStringToFile(srcFile, context, append);
 	}
 	
 	/**

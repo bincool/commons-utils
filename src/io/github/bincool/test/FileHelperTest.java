@@ -107,8 +107,8 @@ public class FileHelperTest extends BaseTest
 		String srcPathname = StringUtils.spliceStr("", basePath, "a11.txt");
 		
 		FileHelper.createFile(srcPathname);
-		FileHelper.writeStringToFile(srcPathname, "Hello ");
-		FileHelper.writeStringToFile(srcPathname, "World!\n");
+		FileHelper.writeStringToFile(srcPathname, "Hello ", true);
+		FileHelper.writeStringToFile(srcPathname, "World!\n", false);
 	}
 
 }
