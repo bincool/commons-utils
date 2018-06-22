@@ -1,45 +1,41 @@
 /**
-* @FileName: FileUtilsTest.java
+* @FileName: FileHelperTest.java
 * @Package: io.github.bincool.test
 * @Copyright: 2018 bincool.github.io Inc. All Rights Reserved.
-* @Description: FileUtilsTest.java: common-io文件工具类测试.
+* @Description: FileHelperTest.java: TODO 一句话描述文件的作用.
 * @Author wchy，技术交流(891946049).
-* @Date 2018年6月22日 上午10:35:42.
+* @Date 2018年6月22日 下午4:42:49.
 * @Content: 新增.
 * @Version: V1.0.
 */
 package io.github.bincool.test;
-
-import java.io.File;
-
-import org.apache.commons.io.FileUtils;
 
 import io.github.bincool.test.base.BaseTest;
 import io.github.bincool.utils.FileHelper;
 import io.github.bincool.utils.commons.StringUtils;
 
 /**
-* @ClassName: FileUtilsTest.java
+* @ClassName: FileHelperTest.java
 * 
 * @Description: 
 * <p>
-* common-io文件工具类测试.
+* TODO 一句话对这个类进行描述.
 * </p>
 * <p>
-* 详细描述.
+* TODO 详细描述.
 * </p>
 * <p>
-* 示例代码.
+* TODO 示例代码.
 * </p>
 *
 * @Author: wchy，技术交流(891946049).
 * 
-* @Date: 2018年6月22日 上午10:35:42.
+* @Date: 2018年6月22日 下午4:42:49.
 * 
 */
-public class FileUtilsTest extends BaseTest 
+public class FileHelperTest extends BaseTest 
 {
-	
+
 	/**
 	 * 基路径.
 	 */
@@ -71,13 +67,9 @@ public class FileUtilsTest extends BaseTest
 	{
 		String srcPathname = StringUtils.spliceStr("", basePath, "a.txt");
 		String destPathname = StringUtils.spliceStr("", basePath, "b.txt");
-		
-		FileHelper.createFile(srcPathname);
-		
-		File srcFile = new File(srcPathname);
-		
-		File destFile = new File(destPathname);
-		FileUtils.copyFile(srcFile, destFile);
+
+		System.out.println(srcPathname);
+		FileHelper.copyFile(srcPathname, destPathname);
 	}
 
 }

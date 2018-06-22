@@ -13,6 +13,8 @@ package io.github.bincool.utils;
 import java.io.File;
 import java.io.IOException;
 
+import org.apache.commons.io.FileUtils;
+
 import io.github.bincool.utils.commons.StringUtils;
 
 /**
@@ -48,7 +50,7 @@ public class FileHelper
 	}
 	
 	/**
-	 * 创建文件.
+	 * 创建文件,当文件已经存在时不创建.
 	 * @param fileName
 	 * 		文件全路径.
 	 * @throws IOException 
@@ -69,5 +71,22 @@ public class FileHelper
 			file.createNewFile();
 		}
 	}
+	
+	/**
+	 * 复制srcFile文件到destFile文件.
+	 * @param srcPathname
+	 * 		srcFile文件的全路径.
+	 * @param destPathname
+	 * 		destFile文件的全路径.
+	 * @throws IOException
+	 * 		文件操作异常.
+	 */
+	public static void copyFile(String srcPathname, String destPathname) throws IOException 
+	{
+		createFile(srcPathname);
+		File srcFile = new File(srcPathname);
+		File destFile = new File(destPathname);
+        FileUtils.copyFile(srcFile, destFile);
+    }
 	
 }

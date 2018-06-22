@@ -82,6 +82,11 @@ public class StringUtils
 			throw new IllegalArgumentException("pathnames is null");
 		}
 		
+		if (EmptyUtils.isEmpty(spliceSign)) 
+		{
+			spliceSign = "";
+		}
+		
 		StringBuffer sb = new StringBuffer();
 		for(String str : strs) 
 		{
