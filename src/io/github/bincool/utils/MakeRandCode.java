@@ -17,6 +17,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import io.github.bincool.utils.commons.StringUtils;
+
 /**
 * @ClassName: MakeRandCode.java
 * 

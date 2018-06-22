@@ -1,6 +1,6 @@
 /**
 * @FileName: StringUtils.java
-* @Package: io.github.bincool.utils
+* @Package: io.github.bincool.utils.commons
 * @Copyright: 2018 bincool.github.io Inc. All Rights Reserved.
 * @Description: StringUtils.java: 字符串工具类.
 * @Author wchy，技术交流(891946049).
@@ -8,7 +8,7 @@
 * @Content: 新增.
 * @Version: V1.0.
 */
-package io.github.bincool.utils;
+package io.github.bincool.utils.commons;
 
 /**
 * @ClassName: StringUtils.java
@@ -66,5 +66,29 @@ public class StringUtils
     {
     	return str.length() - str.replaceAll(regex, "").length();
     }
+    
+    /**
+     * 用spliceSign拼接字符串.
+     * @param spliceSign
+     * 		拼接符号.
+     * @param strs
+     * 		待拼接的字符串数组.
+     * @return
+     */
+	public static String spliceStr(String spliceSign, String ...strs)  
+	{
+		if(EmptyUtils.isEmpty(strs)) 
+		{
+			throw new IllegalArgumentException("pathnames is null");
+		}
+		
+		StringBuffer sb = new StringBuffer();
+		for(String str : strs) 
+		{
+			sb.append(str).append(spliceSign);
+		}
+		
+		return sb.toString();
+	}
     
 }
