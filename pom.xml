@@ -9,7 +9,7 @@
 		<!-- junit版本号 -->
 		<junit.version>4.11</junit.version>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -33,6 +33,13 @@
 			<version>3.2.1</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.scijava/jep -->
+		<dependency>
+			<groupId>org.scijava</groupId>
+			<artifactId>jep</artifactId>
+			<version>2.4.2</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -45,12 +52,10 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
-					<!-- <excludes>
-						<exclude>**/io/github/bincool/test/**</exclude>
-					</excludes> -->
+					<!-- <excludes> <exclude>**/io/github/bincool/test/**</exclude> </excludes> -->
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
@@ -66,8 +71,8 @@
 					</excludes>
 				</configuration>
 			</plugin>
-			
+
 		</plugins>
 	</build>
-	
+
 </project>
