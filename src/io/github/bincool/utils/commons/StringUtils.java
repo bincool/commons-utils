@@ -10,6 +10,9 @@
 */
 package io.github.bincool.utils.commons;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
 * @ClassName: StringUtils.java
 * 
@@ -94,6 +97,42 @@ public class StringUtils
 		}
 		
 		return sb.toString();
+	}
+	
+	/**
+	 * 判断str是否是正整数.
+	 * @param str
+	 * @return
+	 */
+	public static boolean isPosInt(String str) 
+	{
+		Pattern pattern = Pattern.compile("^([1-9]\\d*)");
+		Matcher isNum = pattern.matcher(str);
+		return !isNum.matches() ? false : true;
+	}
+	
+	/**
+	 * 判断str是否是负整数.
+	 * @param str
+	 * @return
+	 */
+	public static boolean isNegInt(String str) 
+	{
+		Pattern pattern = Pattern.compile("^(\\-?[1-9]\\d*)");
+		Matcher isNum = pattern.matcher(str);
+		return !isNum.matches() ? false : true;
+	}
+	
+	/**
+	 * 判断str是否是整数.
+	 * @param str
+	 * @return
+	 */
+	public static boolean isInt(String str) 
+	{
+		Pattern pattern = Pattern.compile("^(0|\\-?[1-9]\\d*)");
+		Matcher isNum = pattern.matcher(str);
+		return !isNum.matches() ? false : true;
 	}
     
 }
