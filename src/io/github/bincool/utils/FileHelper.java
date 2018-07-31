@@ -17,6 +17,7 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 
 import io.github.bincool.utils.commons.StringUtils;
+import io.github.bincool.utils.commons.UtilRuntimeException;
 
 /**
 * @ClassName: FileHelper.java
@@ -41,6 +42,14 @@ public class FileHelper
 {
 	
 	/**
+	 * 私有构造函数.
+	 */
+	private FileHelper() 
+	{
+		throw new IllegalStateException("Utility class");
+	}
+	
+	/**
 	 * 拼接路径名.
 	 * @param pathnames
 	 * 		路径名数组.
@@ -61,15 +70,23 @@ public class FileHelper
 	{
 		File file = new File(pathname);
 		
+		// 创建路径.
 		File parentFile = file.getParentFile();
-        if (!parentFile.exists()) 
-        {
-            parentFile.mkdirs();
-        }
+		if (!parentFile.exists()) 
+		{
+			if (!parentFile.mkdirs()) 
+			{
+				throw new UtilRuntimeException("The tool is running abnormally. Make dirs fail.");
+			}
+		}
 		
+		// 创建文件.
 		if (!file.exists()) 
 		{
-			file.createNewFile();
+			if (!file.createNewFile()) 
+			{
+				throw new IOException("Create file fail.");
+			}
 		}
 	}
 	
