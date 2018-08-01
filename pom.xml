@@ -8,6 +8,8 @@
 	<properties>
 		<!-- junit版本号 -->
 		<junit.version>4.11</junit.version>
+		<!-- log4j版本号 -->
+		<log4j.version>1.2.17</log4j.version>
 		<commons-io.version>2.4</commons-io.version>
 		<commons-collections.version>3.2.1</commons-collections.version>
 		<jep.version>2.4.2</jep.version>
@@ -20,6 +22,13 @@
 			<version>${junit.version}</version>
 			<!-- 表示开发的时候引入，发布的时候不会加载此包 -->
 			<!-- <scope>test</scope> -->
+		</dependency>
+		
+		<!-- log4j工具包 -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
 		</dependency>
 
 		<!-- io工具包 -->

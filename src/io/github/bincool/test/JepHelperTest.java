@@ -38,6 +38,8 @@ import io.github.bincool.utils.JepHelper;
 */
 public class JepHelperTest extends BaseTest 
 {
+	
+	private Map<String, Object> params;
 
 	/* (non-Javadoc)
 	 * @see io.github.bincool.test.base.BaseTest#setUp()
@@ -45,6 +47,8 @@ public class JepHelperTest extends BaseTest
 	@Override
 	public void setUp() throws Exception 
 	{
+		params = new HashMap<>();
+		params.put("x", 3);
 	}
 
 	/* (non-Javadoc)
@@ -53,6 +57,7 @@ public class JepHelperTest extends BaseTest
 	@Override
 	public void tearDown() throws Exception 
 	{
+		params = null;
 	}
 
 	/* (non-Javadoc)
@@ -61,8 +66,6 @@ public class JepHelperTest extends BaseTest
 	@Override
 	public void test() throws Exception 
 	{
-		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("x", 3);
 		Object obj1 = JepHelper.smartCal("20*5+123");
 		Object obj2 = JepHelper.smartCal("200%2==0", "1/3*25");
 		Object obj3 = JepHelper.smartCal("999999999999999+x", params);
@@ -70,10 +73,10 @@ public class JepHelperTest extends BaseTest
 		
 		Object obj4 = JepHelper.smartCal("x!=0", "(2*x^2+x+1)/x", params);
 		
-		System.out.println(obj1.toString());
-		System.out.println(obj2.toString());
-		System.out.println(bg.toPlainString());
-		System.out.println(obj4.toString());
+		LOGGER.info(obj1.toString());
+		LOGGER.info(obj2.toString());
+		LOGGER.info(bg.toPlainString());
+		LOGGER.info(obj4.toString());
 	}
 
 }

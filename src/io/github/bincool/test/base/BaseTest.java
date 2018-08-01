@@ -10,6 +10,7 @@
 */
 package io.github.bincool.test.base;
 
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,6 +36,11 @@ import org.junit.Test;
 */
 public abstract class BaseTest 
 {
+	
+	/**
+	 * 日志对象.
+	 */
+	protected static final Logger LOGGER = Logger.getLogger(BaseTest.class);
 
 	/**
 	 * @throws java.lang.Exception

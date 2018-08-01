@@ -13,6 +13,7 @@ package io.github.bincool.utils;
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 
 import io.github.bincool.utils.commons.StringUtils;
 
@@ -64,6 +65,16 @@ import java.util.regex.Pattern;
 public class EngineEvalUtils 
 {
 	
+	/**
+	 * final string : return.
+	 */
+	private static final String FINAL_STR_RETURN = "return";
+	
+	/**
+	 * final string : 表达式公式不合法，formula = .
+	 */
+	private static final String FINAL_STR_ILLEGAL_PROMPT = "表达式公式不合法，formula = ";
+	
     /**
      * 正则表达式匹配用户输入的函数名和参数.
      */
@@ -77,15 +88,14 @@ public class EngineEvalUtils
     /**
      * 智能算法，Js引擎执行计算表达式.
      * @param formula
+     * 		计算表达式，可以含function,if,return等关键字.
      * @param params
+     * 		计算表达式所需的参数.
      * @return
      * @throws Exception
      */
     public static Object smartCal(String formula, Map<String, Object> params) throws Exception
     {
-        // 智能算法执行结果.
-        Object calResult = null;
-
         // 表达式检测.
         if (StringUtils.isEmpty(formula))
         {
@@ -102,7 +112,7 @@ public class EngineEvalUtils
         // 算法所需参数变量赋值-全局变量声明赋值.
         if (null != params)
         {
-            for(Map.Entry<String,Object> entry : params.entrySet())
+            for(Map.Entry<String, Object> entry : params.entrySet())
             {
                  if (null != entry.getValue())
                  {
@@ -115,38 +125,8 @@ public class EngineEvalUtils
             }
         }
 
-        // Js函数执行.
-        Invocable invocable = null;
-        if (formula.contains("function"))
-        {
-            Matcher matcher = patternFuncName.matcher(formula);
-            if (matcher.find())
-            {
-                formula = formula.replace(matcher.group(1), " smartCal() ");
-                engine.eval(formula);
-                invocable = (Invocable) engine;
-                calResult = invocable.invokeFunction("smartCal", new Object());
-            }
-            else
-            {
-                throw new IllegalArgumentException("表达式不合法，formula = " + formula);
-            }
-        }
-        // 包装到js函数体中执行.
-        else if (formula.contains("if") || formula.contains("return"))
-        {
-            formula = "function smartCal() {formula}".replace("formula", formula);
-            engine.eval(formula);
-            invocable = (Invocable) engine;
-            calResult = invocable.invokeFunction("smartCal", new Object());
-        }
-        // 直接执行表达式.
-        else
-        {
-            calResult = engine.eval(formula);
-        }
-
-        return calResult;
+        // 利用Js引擎工具调用Js函数执行计算表达式.
+        return smartFormula(engine, formula);
     }
 
     /**
@@ -154,6 +134,7 @@ public class EngineEvalUtils
      * @param formula
      *      计算表达式，可以含function,if,return等关键字.
      * @param params
+     * 		计算表达式所需的参数.
      * @return
      * @throws Exception
      */
@@ -165,56 +146,27 @@ public class EngineEvalUtils
         // 表达式检测.
         if (StringUtils.isEmpty(formula))
         {
-            throw new IllegalArgumentException("表达式公式不合法，formula = " + formula);
+            throw new IllegalArgumentException(FINAL_STR_ILLEGAL_PROMPT + formula);
         }
 
         // 表达式处理.
         formula = formula.trim();
 
         // 有return关键字，则提取return与结束符(;)之间的计算表达式.
-        if (formula.contains("return"))
+        if (formula.contains(FINAL_STR_RETURN))
         {
             // 表达式检查.
             if (!formula.contains(";"))
             {
-                throw new IllegalArgumentException("表达式公式不合法，formula = " + formula);
+                throw new IllegalArgumentException(FINAL_STR_ILLEGAL_PROMPT + formula);
             }
-
-            // 正则匹配有哪几种表达式.
-            List<String> formulaList = new ArrayList<String>();
-            Matcher matcher = patternFormula.matcher(formula);
-            while (matcher.find())
-            {
-                formulaList.add(matcher.group(1));
-            }
-
-            // 对表达式进行计算对比，确定具体所用的表达式，并对变量用真实数值进行替换.
-            try
-            {
-                Number smartCalResult = (Number)smartCal(formula, params);
-
-                for (String tmpFormula : formulaList)
-                {
-                    Number tmp = (Number)smartCal(tmpFormula, params);
-                    if (smartCalResult.doubleValue() == tmp.doubleValue())
-                    {
-                        formulaResult = formula(tmpFormula, params);
-                        break;
-                    }
-                }
-
-                if (null == formulaResult)
-                {
-                    throw new IllegalArgumentException("表达式公式不合法，formula = " + formula);
-                }
-            }
-            catch (Exception e)
-            {
-                throw new IllegalArgumentException("表达式公式不合法，formula = " + formula);
-            }
+            
+            // 查找计算表达式.
+            formulaResult = findFormula(formula, params);
         }
         else
         {
+        	// 单行计算表达式.
             formulaResult = formula(formula, params);
         }
 
@@ -226,6 +178,7 @@ public class EngineEvalUtils
      * @param formula
      *      计算表达式，不含function,if,return.
      * @param params
+     * 		计算表达式所需的参数.
      * @return
      * @throws Exception
      */
@@ -235,9 +188,9 @@ public class EngineEvalUtils
         Object formulaResult = null;
 
         // 表达式检测.
-        if (StringUtils.isEmpty(formula) || formula.contains("if") || formula.contains("return") || formula.contains("function"))
+        if (StringUtils.isEmpty(formula) || formula.contains("if") || formula.contains(FINAL_STR_RETURN) || formula.contains("function"))
         {
-            throw new IllegalArgumentException("表达式公式不合法，formula = " + formula);
+            throw new IllegalArgumentException(FINAL_STR_ILLEGAL_PROMPT + formula);
         }
 
         // 表达式处理.
@@ -256,6 +209,105 @@ public class EngineEvalUtils
         }
 
         return formulaResult;
+    }
+    
+    /**
+     * 利用Js引擎工具调用Js函数执行计算表达式.
+     * @param engine
+     * 		Js引擎.
+     * @param formula
+     * 		计算表达式，可以含function,if,return等关键字.
+     * @return
+     * 		智能算法执行结果.
+     * @throws ScriptException
+     * @throws NoSuchMethodException
+     */
+    private static Object smartFormula(ScriptEngine engine, String formula) throws ScriptException, NoSuchMethodException 
+    {
+    	// 智能算法执行结果.
+        Object calResult = null;
+        
+    	// Js函数执行.
+        Invocable invocable = null;
+        if (formula.contains("function"))
+        {
+            Matcher matcher = patternFuncName.matcher(formula);
+            if (matcher.find())
+            {
+                formula = formula.replace(matcher.group(1), " smartCal() ");
+                engine.eval(formula);
+                invocable = (Invocable) engine;
+                calResult = invocable.invokeFunction("smartCal", new Object());
+            }
+            else
+            {
+                throw new IllegalArgumentException("表达式不合法，formula = " + formula);
+            }
+        }
+        // 包装到js函数体中执行.
+        else if (formula.contains("if") || formula.contains(FINAL_STR_RETURN))
+        {
+            formula = "function smartCal() {formula}".replace("formula", formula);
+            engine.eval(formula);
+            invocable = (Invocable) engine;
+            calResult = invocable.invokeFunction("smartCal", new Object());
+        }
+        // 直接执行表达式.
+        else
+        {
+            calResult = engine.eval(formula);
+        }
+        
+        return calResult;
+    }
+    
+    /**
+     * 查找计算表达式.对表达式进行计算对比，确定具体所用的表达式，并对变量用真实数值进行替换.
+     * @param formula
+     * 		计算表达式，可以含function,if,return等关键字.
+     * @param params
+     * 		计算表达式所需的参数.
+     * @return
+     */
+    private static Object findFormula(String formula, Map<String, Object> params) 
+    {
+    	// 智能算法执行结果.
+        Object formulaResult = null;
+        
+    	// 正则匹配有哪几种表达式.
+        List<String> formulaList = new ArrayList<String>();
+        Matcher matcher = patternFormula.matcher(formula);
+        while (matcher.find())
+        {
+            formulaList.add(matcher.group(1));
+        }
+        
+        // 对表达式进行计算对比，确定具体所用的表达式，并对变量用真实数值进行替换.
+    	try
+        {
+            Number smartCalResult = (Number)smartCal(formula, params);
+
+            for (String tmpFormula : formulaList)
+            {
+                Number tmp = (Number)smartCal(tmpFormula, params);
+                if (smartCalResult.doubleValue() == tmp.doubleValue())
+                {
+                    formulaResult = formula(tmpFormula, params);
+                    break;
+                }
+            }
+
+            if (null == formulaResult)
+            {
+                throw new IllegalArgumentException(FINAL_STR_ILLEGAL_PROMPT + formula);
+            }
+        }
+        catch (Exception e)
+        {
+            throw new IllegalArgumentException(FINAL_STR_ILLEGAL_PROMPT + formula);
+        }
+    	
+    	return formulaResult;
     }
 	
 }
