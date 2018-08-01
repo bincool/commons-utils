@@ -139,7 +139,7 @@ public class MakeRandCode
      * 生产随机码放入随机码仓库,保证仓库随机码不重复,成功返回true.
      * @return
      */
-    public boolean createRandCode()
+    public synchronized boolean createRandCode()
     {
         boolean ret = true;
 
