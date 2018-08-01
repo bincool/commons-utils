@@ -49,7 +49,7 @@ public class EngineEvalTest extends BaseTest
 	 * 例如：formula = "if([长]>300){return 5;}else{return 6;}";
 	 * 例如：formula = "function cal() { return 100;}";
 	 */
-	private static final String formula = "[个数]*[长]*[高]";
+	private static final String FORMULA = "[个数]*[长]*[高]";
 	
 	
 
@@ -78,14 +78,14 @@ public class EngineEvalTest extends BaseTest
 	 * @see io.github.bincool.test.base.BaseTest#test()
 	 */
 	@Override
-	public void test() throws Exception 
+	public void test() throws Exception
 	{
 		// 3.1 智能计算结果.
-		Object calResult = EngineEvalUtils.smartCal(formula, params);
+		Object calResult = EngineEvalUtils.smartCal(FORMULA, params);
 		LOGGER.info(calResult);
 		
 		// 3.2 智能获取表达式计算过程.
-		Object formulaResult = EngineEvalUtils.smartFormula(formula, params);
+		Object formulaResult = EngineEvalUtils.smartFormula(FORMULA, params);
 		LOGGER.info(formulaResult);
 	}
 

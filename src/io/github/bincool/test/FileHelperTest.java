@@ -10,6 +10,10 @@
 */
 package io.github.bincool.test;
 
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 
 import io.github.bincool.test.base.BaseTest;
@@ -41,7 +45,7 @@ public class FileHelperTest extends BaseTest
 	/**
 	 * 基路径.
 	 */
-	private String basePath = "";
+	private String basePath = null;
 
 	/* (non-Javadoc)
 	 * @see io.github.bincool.test.base.BaseTest#setUp()
@@ -58,7 +62,7 @@ public class FileHelperTest extends BaseTest
 	@Override
 	public void tearDown()
 	{
-		basePath = "";
+		basePath = null;
 	}
 
 	/* (non-Javadoc)
@@ -70,45 +74,43 @@ public class FileHelperTest extends BaseTest
 		String srcPathname = StringUtils.spliceStr("", basePath, "a.txt");
 		String destPathname = StringUtils.spliceStr("", basePath, "b.txt");
 		
+		// 拷贝文件测试.
 		FileHelper.copyFile(srcPathname, destPathname);
-	}
-	
-	/**
-	 * 删除文件测试.
-	 * @throws Exception
-	 */
-	@Test
-	public void testDeleteFile() throws Exception 
-	{
-		String srcPathname = StringUtils.spliceStr("", basePath, "a.txt");
-		String destPathname = StringUtils.spliceStr("", basePath, "b.txt");
 		
-		FileHelper.copyFile(srcPathname, destPathname);
+		// 删除文件测试.
 		FileHelper.deleteFile(srcPathname);
-	}
-	
-	/**
-	 * 移动文件测试.
-	 * @throws Exception
-	 */
-	@Test
-	public void testMoveFile() throws Exception 
-	{
-		String srcPathname = StringUtils.spliceStr("", basePath, "a1.txt");
-		String destPathname = StringUtils.spliceStr("", basePath, "b1.txt");
+		
+		// 移动文件测试.
+		srcPathname = StringUtils.spliceStr("", basePath, "a1.txt");
+		destPathname = StringUtils.spliceStr("", basePath, "b1.txt");
 		
 		FileHelper.createFile(srcPathname);
 		FileHelper.moveFile(srcPathname, destPathname);
-	}
-	
-	@Test
-	public void testWriteFile() throws Exception 
-	{
-		String srcPathname = StringUtils.spliceStr("", basePath, "a11.txt");
+		
+		// 写文件测试.
+		srcPathname = StringUtils.spliceStr("", basePath, "a11.txt");
 		
 		FileHelper.createFile(srcPathname);
 		FileHelper.writeStringToFile(srcPathname, "Hello ", true);
 		FileHelper.writeStringToFile(srcPathname, "World!\n", false);
+	}
+	
+	/**
+	 * 测试FileUtils.
+	 * @throws IOException
+	 */
+	@Test
+	public void testFileUtils() throws IOException 
+	{
+		String srcPathname = StringUtils.spliceStr("", basePath, "a.txt");
+		String destPathname = StringUtils.spliceStr("", basePath, "b.txt");
+		
+		FileHelper.createFile(srcPathname);
+		
+		File srcFile = new File(srcPathname);
+		
+		File destFile = new File(destPathname);
+		FileUtils.copyFile(srcFile, destFile);
 	}
 
 }

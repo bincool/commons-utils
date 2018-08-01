@@ -72,21 +72,15 @@ public class FileHelper
 		
 		// 创建路径.
 		File parentFile = file.getParentFile();
-		if (!parentFile.exists()) 
+		if (!parentFile.exists() && !parentFile.mkdirs()) 
 		{
-			if (!parentFile.mkdirs()) 
-			{
-				throw new UtilRuntimeException("The tool is running abnormally. Make dirs fail.");
-			}
+			throw new UtilRuntimeException("The tool is running abnormally. Make dirs fail.");
 		}
 		
 		// 创建文件.
-		if (!file.exists()) 
+		if (!file.exists() && !file.createNewFile()) 
 		{
-			if (!file.createNewFile()) 
-			{
-				throw new IOException("Create file fail.");
-			}
+			throw new IOException("Create file fail.");
 		}
 	}
 	
