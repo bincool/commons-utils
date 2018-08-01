@@ -116,7 +116,7 @@ public class StringUtils
 	{
 		Pattern pattern = Pattern.compile("^([1-9]\\d*)");
 		Matcher isNum = pattern.matcher(str);
-		return !isNum.matches() ? false : true;
+		return isNum.matches();
 	}
 	
 	/**
@@ -128,7 +128,7 @@ public class StringUtils
 	{
 		Pattern pattern = Pattern.compile("^(\\-?[1-9]\\d*)");
 		Matcher isNum = pattern.matcher(str);
-		return !isNum.matches() ? false : true;
+		return isNum.matches();
 	}
 	
 	/**
@@ -140,7 +140,7 @@ public class StringUtils
 	{
 		Pattern pattern = Pattern.compile("^(0|\\-?[1-9]\\d*)");
 		Matcher isNum = pattern.matcher(str);
-		return !isNum.matches() ? false : true;
+		return isNum.matches();
 	}
     
 }
