@@ -70,7 +70,7 @@ public class ListTreeOper<T extends ListTreeBean>
 	private List<T> getChild(String rootId, List<T> dataList)
     {
         // 子菜单.
-        List<T> childList = new ArrayList<T>();
+        List<T> childList = new ArrayList<>();
         for (T data : dataList)
         {
             // 遍历所有节点，将父菜单id与传过来的id比较.
@@ -88,7 +88,7 @@ public class ListTreeOper<T extends ListTreeBean>
         }
 
         // 递归退出条件.
-        if (childList.size() == 0)
+        if (childList.isEmpty())
         {
             return null;
         }

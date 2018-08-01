@@ -43,23 +43,42 @@ public class ListTreeOperTest extends BaseTest
      * list树形数据工具类.
      */
 	private ListTreeOper<Menu> listTreeOper;
+	
+	/**
+	 * 根列表.
+	 */
+	private List<Menu> rootList;
+	
+	/**
+	 * 非根列表.
+	 */
+	private List<Menu> dataList;
 
 	/* (non-Javadoc)
 	 * @see io.github.bincool.test.base.BaseTest#setUp()
 	 */
 	@Override
-	public void setUp() throws Exception 
+	public void setUp()
 	{
-		listTreeOper = new ListTreeOper<Menu>();
+		listTreeOper = new ListTreeOper<>();
+		rootList = new ArrayList<>();
+		rootList.add(new Menu("1", "0", "系统菜单", "", "menu_icon_1001_bulletin.png"));
+		
+		dataList = new ArrayList<>();
+		dataList.add(new Menu("2", "1", "权限配置", "", "icon-user"));
+		dataList.add(new Menu("3", "2", "角色权限管理", "role/list", ""));
+		dataList.add(new Menu("4", "2", "用户管理", "", ""));
 	}
 
 	/* (non-Javadoc)
 	 * @see io.github.bincool.test.base.BaseTest#tearDown()
 	 */
 	@Override
-	public void tearDown() throws Exception 
+	public void tearDown()
 	{
 		listTreeOper = null;
+		rootList = null;
+		dataList = null;
 	}
 
 	/* (non-Javadoc)
@@ -68,17 +87,8 @@ public class ListTreeOperTest extends BaseTest
 	@Override
 	public void test() 
 	{
-		List<Menu> rootList = new ArrayList<Menu>();
-		rootList.add(new Menu("1", "0", "系统菜单", "", "menu_icon_1001_bulletin.png"));
-		
-		List<Menu> dataList = new ArrayList<Menu>();
-		dataList.add(new Menu("2", "1", "权限配置", "", "icon-user"));
-		dataList.add(new Menu("3", "2", "角色权限管理", "role/list", ""));
-		dataList.add(new Menu("4", "2", "用户管理", "", ""));
-		
-		
 		List<Menu> menuList = listTreeOper.getListTree(rootList, dataList);
-		System.out.println(menuList);
+		LOGGER.info(menuList);
 	}
 
 }

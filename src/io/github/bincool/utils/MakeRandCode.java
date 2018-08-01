@@ -69,12 +69,12 @@ public class MakeRandCode
     /**
      * 随机码仓库,每个任务使用一个内存对象.
      */
-    private Map<String, String> codeMap = new HashMap<String, String>();
+    private Map<String, String> codeMap = new HashMap<>();
     
     /**
      * 随机码下标索引顺序随机打乱,每个任务使用一个内存对象.
      */
-    private List<Integer> codeOrder = new ArrayList<Integer>();
+    private List<Integer> codeOrder = new ArrayList<>();
 
     /**
      * 缓存数据快,每个任务使用一个内存对象.
@@ -212,13 +212,13 @@ public class MakeRandCode
     	} 
     	
     	// 已经存在此随机码则返回false，task不操作，继续while.
-        if (codeMap.containsKey(randCode.toString()))
+        if (codeMap.containsKey(randCode))
         {
             ret = false;
         }
         else
         {
-            codeMap.put(randCode.toString(), randCode.toString());
+            codeMap.put(randCode, randCode);
         }
 
         return ret;

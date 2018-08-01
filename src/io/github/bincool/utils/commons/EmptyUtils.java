@@ -35,6 +35,14 @@ public class EmptyUtils
 {
 	
 	/**
+	 * 私有构造函数.
+	 */
+	private EmptyUtils() 
+	{
+		throw new IllegalStateException("Utility class");
+	}
+	
+	/**
 	 * 判断字符串是否为空，长度为0被认为是空字符串.
 	 * @param str
 	 * 		字符串.
@@ -53,7 +61,7 @@ public class EmptyUtils
      */
     public static boolean isEmpty(Collection<?> collection) 
     {
-        return null == collection || collection.size() == 0;
+        return null == collection || collection.isEmpty();
     }
     
     /**

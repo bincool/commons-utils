@@ -46,8 +46,8 @@ public class EngineEvalTest extends BaseTest
 	/**
 	 * 2 表达式准备：可通过数据查询或自主构造，其中return的表达式后需用英文逗号结束(用于匹配具体计算过程).
 	 * return主要用于if条件分支和function函数之中，当只有一个表达式(没有分支判断也不是函数)时直接书写一行表达式即可毋须添加结束符.
-	 * formula = "if([长]>300){return 5;}else{return 6;}";
-	 * formula = "function cal() { return 100;}";
+	 * 例如：formula = "if([长]>300){return 5;}else{return 6;}";
+	 * 例如：formula = "function cal() { return 100;}";
 	 */
 	private static final String formula = "[个数]*[长]*[高]";
 	
@@ -57,7 +57,7 @@ public class EngineEvalTest extends BaseTest
 	 * @see io.github.bincool.test.base.BaseTest#setUp()
 	 */
 	@Override
-	public void setUp() throws Exception 
+	public void setUp()
 	{
 		params = new HashMap<>();
 		params.put("个数", 6);
@@ -69,7 +69,7 @@ public class EngineEvalTest extends BaseTest
 	 * @see io.github.bincool.test.base.BaseTest#tearDown()
 	 */
 	@Override
-	public void tearDown() throws Exception 
+	public void tearDown()
 	{
 		params = null;
 	}

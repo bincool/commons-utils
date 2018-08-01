@@ -36,6 +36,14 @@ public class StringUtils
 {
 	
 	/**
+	 * Ë½ÓÐ¹¹Ôìº¯Êý.
+	 */
+	private StringUtils() 
+	{
+		throw new IllegalStateException("Utility class");
+	}
+	
+	/**
 	 * ×Ö·û´®Îª¿Õ.
 	 * @param str
 	 * 		×Ö·û´®.
@@ -90,7 +98,7 @@ public class StringUtils
 			spliceSign = "";
 		}
 		
-		StringBuffer sb = new StringBuffer();
+		StringBuilder sb = new StringBuilder();
 		for(String str : strs) 
 		{
 			sb.append(str).append(spliceSign);

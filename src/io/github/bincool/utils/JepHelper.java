@@ -43,6 +43,14 @@ public class JepHelper
 {
 	
 	/**
+	 * 私有构造函数.
+	 */
+	private JepHelper() 
+	{
+		throw new IllegalStateException("Utility class");
+	}
+	
+	/**
 	 * 智能计算不带参数的表达式的值.
 	 * @param formula
 	 * 		表达式.

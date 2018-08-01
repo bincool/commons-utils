@@ -35,6 +35,9 @@ import io.github.bincool.utils.MakeRandCode;
 public class MakeRandCodeTest extends BaseTest
 {
 	
+	/**
+	 * Ëæ»ú²Ö¿â¶ÔÏó.
+	 */
 	private MakeRandCode randCodes;
 
 	/* (non-Javadoc)
@@ -67,7 +70,7 @@ public class MakeRandCodeTest extends BaseTest
 	{
 		for (int i = 0; i < 100; i++) 
 		{
-			System.out.println(randCodes.obtainRandCode());
+			LOGGER.info(randCodes.obtainRandCode());
 		}
 		
 	}

@@ -47,7 +47,7 @@ public class FileHelperTest extends BaseTest
 	 * @see io.github.bincool.test.base.BaseTest#setUp()
 	 */
 	@Override
-	public void setUp() throws Exception 
+	public void setUp()
 	{
 		basePath = FileHelper.splicePathname(System.getProperty("user.dir") , "file" , "test");
 	}
@@ -56,7 +56,7 @@ public class FileHelperTest extends BaseTest
 	 * @see io.github.bincool.test.base.BaseTest#tearDown()
 	 */
 	@Override
-	public void tearDown() throws Exception 
+	public void tearDown()
 	{
 		basePath = "";
 	}

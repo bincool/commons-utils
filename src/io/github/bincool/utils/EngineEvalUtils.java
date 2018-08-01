@@ -84,6 +84,14 @@ public class EngineEvalUtils
      * 正则表达式匹配用户输入的函数名和参数.
      */
     private static final Pattern patternFormula = Pattern.compile("return([^;]*);");
+    
+    /**
+     * 私有构造函数.
+     */
+    private EngineEvalUtils() 
+    {
+    	throw new IllegalStateException("Utility class");
+    }
 
     /**
      * 智能算法，Js引擎执行计算表达式.
@@ -92,9 +100,11 @@ public class EngineEvalUtils
      * @param params
      * 		计算表达式所需的参数.
      * @return
+     * @throws ScriptException 
+     * @throws NoSuchMethodException 
      * @throws Exception
      */
-    public static Object smartCal(String formula, Map<String, Object> params) throws Exception
+    public static Object smartCal(String formula, Map<String, Object> params) throws NoSuchMethodException, ScriptException
     {
         // 表达式检测.
         if (StringUtils.isEmpty(formula))
@@ -136,9 +146,11 @@ public class EngineEvalUtils
      * @param params
      * 		计算表达式所需的参数.
      * @return
+     * @throws ScriptException 
+     * @throws NoSuchMethodException 
      * @throws Exception
      */
-    public static Object smartFormula(String formula, Map<String, Object> params) throws Exception
+    public static Object smartFormula(String formula, Map<String, Object> params) throws NoSuchMethodException, ScriptException
     {
         // 智能算法执行结果.
         Object formulaResult = null;
@@ -180,9 +192,11 @@ public class EngineEvalUtils
      * @param params
      * 		计算表达式所需的参数.
      * @return
+     * @throws ScriptException 
+     * @throws NoSuchMethodException 
      * @throws Exception
      */
-    public static Object formula(String formula, Map<String, Object> params) throws Exception
+    public static Object formula(String formula, Map<String, Object> params) throws NoSuchMethodException, ScriptException
     {
         // 智能算法执行结果.
         Object formulaResult = null;
@@ -275,7 +289,7 @@ public class EngineEvalUtils
         Object formulaResult = null;
         
     	// 正则匹配有哪几种表达式.
-        List<String> formulaList = new ArrayList<String>();
+        List<String> formulaList = new ArrayList<>();
         Matcher matcher = patternFormula.matcher(formula);
         while (matcher.find())
         {

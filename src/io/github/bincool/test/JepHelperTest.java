@@ -39,13 +39,16 @@ import io.github.bincool.utils.JepHelper;
 public class JepHelperTest extends BaseTest 
 {
 	
+	/**
+	 * 计算表达式所需的参数.
+	 */
 	private Map<String, Object> params;
 
 	/* (non-Javadoc)
 	 * @see io.github.bincool.test.base.BaseTest#setUp()
 	 */
 	@Override
-	public void setUp() throws Exception 
+	public void setUp()
 	{
 		params = new HashMap<>();
 		params.put("x", 3);
@@ -55,7 +58,7 @@ public class JepHelperTest extends BaseTest
 	 * @see io.github.bincool.test.base.BaseTest#tearDown()
 	 */
 	@Override
-	public void tearDown() throws Exception 
+	public void tearDown()
 	{
 		params = null;
 	}
