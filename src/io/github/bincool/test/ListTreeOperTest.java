@@ -2,10 +2,10 @@
 * @FileName: ListTreeOperTest.java
 * @Package: io.github.bincool.test
 * @Copyright: 2018 bincool.github.io Inc. All Rights Reserved.
-* @Description: ListTreeOperTest.java: ListÊ÷ĞÎÊı¾İ²Ù×÷Àà²âÊÔ.
-* @Author wchy£¬¼¼Êõ½»Á÷(891946049).
-* @Date 2018Äê6ÔÂ12ÈÕ ÏÂÎç9:21:21.
-* @Content: ĞÂÔö.
+* @Description: ListTreeOperTest.java: Listæ ‘å½¢æ•°æ®æ“ä½œç±»æµ‹è¯•.
+* @Author wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
+* @Date 2018å¹´6æœˆ12æ—¥ ä¸‹åˆ9:21:21.
+* @Content: æ–°å¢.
 * @Version: V1.0.
 */
 package io.github.bincool.test;
@@ -22,35 +22,35 @@ import io.github.bincool.utils.ListTreeOper;
 * 
 * @Description: 
 * <p>
-* ListÊ÷ĞÎÊı¾İ²Ù×÷Àà²âÊÔ.
+* Listæ ‘å½¢æ•°æ®æ“ä½œç±»æµ‹è¯•.
 * </p>
 * <p>
-* ÏêÏ¸ÃèÊö.
+* è¯¦ç»†æè¿°.
 * </p>
 * <p>
-* Ê¾Àı´úÂë.
+* ç¤ºä¾‹ä»£ç .
 * </p>
 *
-* @Author: wchy£¬¼¼Êõ½»Á÷(891946049).
+* @Author: wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
 * 
-* @Date: 2018Äê6ÔÂ12ÈÕ ÏÂÎç9:21:21.
+* @Date: 2018å¹´6æœˆ12æ—¥ ä¸‹åˆ9:21:21.
 * 
 */
 public class ListTreeOperTest extends BaseTest 
 {
 	
 	/**
-     * listÊ÷ĞÎÊı¾İ¹¤¾ßÀà.
-     */
+	 * listæ ‘å½¢æ•°æ®å·¥å…·ç±».
+	 */
 	private ListTreeOper<Menu> listTreeOper;
 	
 	/**
-	 * ¸ùÁĞ±í.
+	 * æ ¹åˆ—è¡¨.
 	 */
 	private List<Menu> rootList;
 	
 	/**
-	 * ·Ç¸ùÁĞ±í.
+	 * éæ ¹åˆ—è¡¨.
 	 */
 	private List<Menu> dataList;
 
@@ -62,12 +62,12 @@ public class ListTreeOperTest extends BaseTest
 	{
 		listTreeOper = new ListTreeOper<>();
 		rootList = new ArrayList<>();
-		rootList.add(new Menu("1", "0", "ÏµÍ³²Ëµ¥", "", "menu_icon_1001_bulletin.png"));
+		rootList.add(new Menu("1", "0", "ç³»ç»Ÿèœå•", "", "menu_icon_1001_bulletin.png"));
 		
 		dataList = new ArrayList<>();
-		dataList.add(new Menu("2", "1", "È¨ÏŞÅäÖÃ", "", "icon-user"));
-		dataList.add(new Menu("3", "2", "½ÇÉ«È¨ÏŞ¹ÜÀí", "role/list", ""));
-		dataList.add(new Menu("4", "2", "ÓÃ»§¹ÜÀí", "", ""));
+		dataList.add(new Menu("2", "1", "æƒé™é…ç½®", "", "icon-user"));
+		dataList.add(new Menu("3", "2", "è§’è‰²æƒé™ç®¡ç†", "role/list", ""));
+		dataList.add(new Menu("4", "2", "ç”¨æˆ·ç®¡ç†", "", ""));
 	}
 
 	/* (non-Javadoc)

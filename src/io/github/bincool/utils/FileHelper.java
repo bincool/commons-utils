@@ -2,10 +2,10 @@
 * @FileName: FileHelper.java
 * @Package: io.github.bincool.utils
 * @Copyright: 2018 bincool.github.io Inc. All Rights Reserved.
-* @Description: FileHelper.java: ÎÄ¼ş°ïÖúÀà.
-* @Author wchy£¬¼¼Êõ½»Á÷(891946049).
-* @Date 2018Äê6ÔÂ22ÈÕ ÉÏÎç11:00:10.
-* @Content: ĞÂÔö.
+* @Description: FileHelper.java: æ–‡ä»¶å¸®åŠ©ç±».
+* @Author wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
+* @Date 2018å¹´6æœˆ22æ—¥ ä¸Šåˆ11:00:10.
+* @Content: æ–°å¢.
 * @Version: V1.0.
 */
 package io.github.bincool.utils;
@@ -24,91 +24,91 @@ import io.github.bincool.utils.commons.UtilRuntimeException;
 * 
 * @Description: 
 * <p>
-* ÎÄ¼ş°ïÖúÀà.
+* æ–‡ä»¶å¸®åŠ©ç±».
 * </p>
 * <p>
-* ÏêÏ¸ÃèÊö.
+* è¯¦ç»†æè¿°.
 * </p>
 * <p>
-* Ê¾Àı´úÂë.
+* ç¤ºä¾‹ä»£ç .
 * </p>
 *
-* @Author: wchy£¬¼¼Êõ½»Á÷(891946049).
+* @Author: wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
 * 
-* @Date: 2018Äê6ÔÂ22ÈÕ ÉÏÎç11:00:10.
+* @Date: 2018å¹´6æœˆ22æ—¥ ä¸Šåˆ11:00:10.
 * 
 */
 public class FileHelper 
 {
-	
+
 	/**
-	 * Ë½ÓĞ¹¹Ôìº¯Êı.
+	 * ç§æœ‰æ„é€ å‡½æ•°.
 	 */
 	private FileHelper() 
 	{
 		throw new IllegalStateException("Utility class");
 	}
-	
+
 	/**
-	 * Æ´½ÓÂ·¾¶Ãû.
+	 * æ‹¼æ¥è·¯å¾„å.
 	 * @param pathnames
-	 * 		Â·¾¶ÃûÊı×é.
+	 * 		è·¯å¾„åæ•°ç»„.
 	 */
-	public static String splicePathname(String ...pathnames)  
+	public static String splicePathname(String... pathnames) 
 	{
 		return StringUtils.spliceStr(File.separator, pathnames);
 	}
-	
+
 	/**
-	 * ´´½¨ÎÄ¼ş,µ±ÎÄ¼şÒÑ¾­´æÔÚÊ±²»´´½¨.
+	 * åˆ›å»ºæ–‡ä»¶,å½“æ–‡ä»¶å·²ç»å­˜åœ¨æ—¶ä¸åˆ›å»º.
 	 * @param fileName
-	 * 		ÎÄ¼şÈ«Â·¾¶.
-	 * @throws IOException 
-	 * 		´´½¨ÎÄ¼şÒì³£.
+	 * 		æ–‡ä»¶å…¨è·¯å¾„.
+	 * @throws IOException
+	 * 		åˆ›å»ºæ–‡ä»¶å¼‚å¸¸.
 	 */
 	public static void createFile(String pathname) throws IOException 
 	{
 		File file = new File(pathname);
-		
-		// ´´½¨Â·¾¶.
+
+		// åˆ›å»ºè·¯å¾„.
 		File parentFile = file.getParentFile();
 		if (!parentFile.exists() && !parentFile.mkdirs()) 
 		{
 			throw new UtilRuntimeException("The tool is running abnormally. Make dirs fail.");
 		}
-		
-		// ´´½¨ÎÄ¼ş.
+
+		// åˆ›å»ºæ–‡ä»¶.
 		if (!file.exists() && !file.createNewFile()) 
 		{
 			throw new IOException("Create file fail.");
 		}
 	}
-	
+
 	/**
-	 * ¸´ÖÆsrcFileÎÄ¼şµ½destFileÎÄ¼ş.
+	 * å¤åˆ¶srcFileæ–‡ä»¶åˆ°destFileæ–‡ä»¶.
 	 * @param srcPathname
-	 * 		srcFileÎÄ¼şµÄÈ«Â·¾¶.
+	 * 		srcFileæ–‡ä»¶çš„å…¨è·¯å¾„.
 	 * @param destPathname
-	 * 		destFileÎÄ¼şµÄÈ«Â·¾¶.
+	 * 		destFileæ–‡ä»¶çš„å…¨è·¯å¾„.
 	 * @throws IOException
-	 * 		ÎÄ¼ş²Ù×÷Òì³£.
+	 * 		æ–‡ä»¶æ“ä½œå¼‚å¸¸.
 	 */
 	public static void copyFile(String srcPathname, String destPathname) throws IOException 
 	{
 		createFile(srcPathname);
 		File srcFile = new File(srcPathname);
 		File destFile = new File(destPathname);
-        FileUtils.copyFile(srcFile, destFile);
-    }
-	
+		FileUtils.copyFile(srcFile, destFile);
+	}
+
 	/**
-	 * ÒÆ¶¯srcFileÎÄ¼şµ½destFileÎÄ¼ş.
+	 * ç§»åŠ¨srcFileæ–‡ä»¶åˆ°destFileæ–‡ä»¶.
 	 * @param srcPathname
-	 * 		srcFileÎÄ¼şµÄÈ«Â·¾¶.
+	 * 		srcFileæ–‡ä»¶çš„å…¨è·¯å¾„.
 	 * @param destPathname
-	 * 		destFileÎÄ¼şµÄÈ«Â·¾¶.
+	 * 		destFileæ–‡ä»¶çš„å…¨è·¯å¾„.
 	 * @throws IOException
-	 * 		ÎÄ¼ş²Ù×÷Òì³£.
+	 * 		æ–‡ä»¶æ“ä½œå¼‚å¸¸.
 	 */
 	public static void moveFile(String srcPathname, String destPathname) throws IOException 
 	{
@@ -116,61 +116,61 @@ public class FileHelper
 		File destFile = new File(destPathname);
 		FileUtils.moveFile(srcFile, destFile);
 	}
-	
+
 	/**
-	 * É¾³ıÎÄ¼ş.
+	 * åˆ é™¤æ–‡ä»¶.
 	 * @param delPathname
-	 * 		delFileÎÄ¼şµÄÈ«Â·¾¶.
+	 * 		delFileæ–‡ä»¶çš„å…¨è·¯å¾„.
 	 * @throws IOException
-	 * 		ÎÄ¼ş²Ù×÷Òì³£.
+	 * 		æ–‡ä»¶æ“ä½œå¼‚å¸¸.
 	 */
 	public static void deleteFile(String delPathname) throws IOException 
 	{
 		File delFile = new File(delPathname);
 		FileUtils.forceDelete(delFile);
 	}
-	
+
 	/**
-	 * Ğ´ÈëÎÄ¼şÄÚÈİ.
+	 * å†™å…¥æ–‡ä»¶å†…å®¹.
 	 * @param srcPathname
-	 * 		srcFileÎÄ¼şµÄÈ«Â·¾¶.
+	 * 		srcFileæ–‡ä»¶çš„å…¨è·¯å¾„.
 	 * @param context
-	 * 		ÄÚÈİ.
+	 * 		å†…å®¹.
 	 * @param append
-	 * 		×·¼Ó.
+	 * 		è¿½åŠ .
 	 * @throws IOException
-	 * 		ÎÄ¼ş²Ù×÷Òì³£.
+	 * 		æ–‡ä»¶æ“ä½œå¼‚å¸¸.
 	 */
 	public static void writeStringToFile(String srcPathname, String context, boolean append) throws IOException 
 	{
 		File srcFile = new File(srcPathname);
 		FileUtils.writeStringToFile(srcFile, context, append);
 	}
-	
+
 	/**
-	 * ¶ÁÈ¡ÎÄ¼şµ½×Ö·û´®.
+	 * è¯»å–æ–‡ä»¶åˆ°å­—ç¬¦ä¸².
 	 * @param srcPathname
-	 * 		srcFileÎÄ¼şµÄÈ«Â·¾¶.
+	 * 		srcFileæ–‡ä»¶çš„å…¨è·¯å¾„.
 	 * @throws IOException
-	 * 		ÎÄ¼ş²Ù×÷Òì³£.
+	 * 		æ–‡ä»¶æ“ä½œå¼‚å¸¸.
 	 */
 	public static String readFileToString(String srcPathname) throws IOException 
 	{
 		File srcFile = new File(srcPathname);
-        return FileUtils.readFileToString(srcFile);
+		return FileUtils.readFileToString(srcFile);
 	}
-	
+
 	/**
-	 * ¶ÁÈ¡ÎÄ¼şµ½list.
+	 * è¯»å–æ–‡ä»¶åˆ°list.
 	 * @param srcPathname
-	 * 		srcFileÎÄ¼şµÄÈ«Â·¾¶.
+	 * 		srcFileæ–‡ä»¶çš„å…¨è·¯å¾„.
 	 * @throws IOException
-	 * 		ÎÄ¼ş²Ù×÷Òì³£.
+	 * 		æ–‡ä»¶æ“ä½œå¼‚å¸¸.
 	 */
 	public static List<String> readLines(String srcPathname) throws IOException 
 	{
 		File srcFile = new File(srcPathname);
 		return FileUtils.readLines(srcFile);
 	}
-	
+
 }

@@ -2,10 +2,10 @@
 * @FileName: MakeRandCode.java
 * @Package: io.github.bincool.utils
 * @Copyright: 2018 bincool.github.io Inc. All Rights Reserved.
-* @Description: MakeRandCode.java: ²»ÖØ¸´Ëæ»úÂë²Ö¿âÉú³ÉÆ÷.
-* @Author wchy£¬¼¼Êõ½»Á÷(891946049).
-* @Date 2018Äê6ÔÂ12ÈÕ ÏÂÎç2:59:44.
-* @Content: ĞÂÔö.
+* @Description: MakeRandCode.java: ä¸é‡å¤éšæœºç ä»“åº“ç”Ÿæˆå™¨.
+* @Author wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
+* @Date 2018å¹´6æœˆ12æ—¥ ä¸‹åˆ2:59:44.
+* @Content: æ–°å¢.
 * @Version: V1.0.
 */
 package io.github.bincool.utils;
@@ -24,80 +24,80 @@ import io.github.bincool.utils.commons.StringUtils;
 * 
 * @Description: 
 * <p>
-* ²»ÖØ¸´Ëæ»úÂë²Ö¿âÉú³ÉÆ÷,Ã¿¸öÈÎÎñ¶ÔÓ¦Ò»¸öÉú³ÉÆ÷¶ÔÏó.
+* ä¸é‡å¤éšæœºç ä»“åº“ç”Ÿæˆå™¨,æ¯ä¸ªä»»åŠ¡å¯¹åº”ä¸€ä¸ªç”Ÿæˆå™¨å¯¹è±¡.
 * </p>
 * <p>
-* ÏêÏ¸ÃèÊö:
-* 1 ÎŞ²Î¹¹Ôìº¯Êı£¬Ä¬ÈÏÎª6Î»Ëæ»úÂë²Ö¿â£¬4Î»Êı×Ö2Î»×ÖÄ¸.
-* 2 ÓĞ²ÎÊı¹¹Ôìº¯Êı£¬²ÎÊıÎªËæ»úÂë³¤¶ÈºÍ×ÖÄ¸¸öÊı£¬ÆäÖĞËæ»úÂë³¤¶ÈÔ¼ÊøÎª1~256£¬×ÖÄ¸³¤¶ÈÔ¼ÊøÎª0~length.
-* 3 Éú²ú(µ¥¸ö/ÅúÁ¿/×Ô¶¨Òå)Ëæ»úÂë·ÅÈëËæ»úÂë²Ö¿â£¬µ±²Ö¿âÖĞÓĞ´ËËæ»úÂëÊ±²»·ÅÈë.
-* 4 »ñÈ¡µ±Ç°Ëæ»úÂë£¬ÊÇ×î½üÒ»´ÎÉú³É³É¹¦µÄËæ»úÂë.
-* 5 »ñÈ¡Ëæ»úÂë£¬Ëæ»úÂëÀ´×ÔËæ»úÂë²Ö¿â.
+* è¯¦ç»†æè¿°:
+* 1 æ— å‚æ„é€ å‡½æ•°ï¼Œé»˜è®¤ä¸º6ä½éšæœºç ä»“åº“ï¼Œ4ä½æ•°å­—2ä½å­—æ¯.
+* 2 æœ‰å‚æ•°æ„é€ å‡½æ•°ï¼Œå‚æ•°ä¸ºéšæœºç é•¿åº¦å’Œå­—æ¯ä¸ªæ•°ï¼Œå…¶ä¸­éšæœºç é•¿åº¦çº¦æŸä¸º1~256ï¼Œå­—æ¯é•¿åº¦çº¦æŸä¸º0~length.
+* 3 ç”Ÿäº§(å•ä¸ª/æ‰¹é‡/è‡ªå®šä¹‰)éšæœºç æ”¾å…¥éšæœºç ä»“åº“ï¼Œå½“ä»“åº“ä¸­æœ‰æ­¤éšæœºç æ—¶ä¸æ”¾å…¥.
+* 4 è·å–å½“å‰éšæœºç ï¼Œæ˜¯æœ€è¿‘ä¸€æ¬¡ç”ŸæˆæˆåŠŸçš„éšæœºç .
+* 5 è·å–éšæœºç ï¼Œéšæœºç æ¥è‡ªéšæœºç ä»“åº“.
 * </p>
 * <p>
-* Ê¾Àı´úÂë:
+* ç¤ºä¾‹ä»£ç :
 * MakeRandCode randCodeHouses = new MakeRandCode(2, 0);
-* // ³õÊ¼»¯Ëæ»úÂë²Ö¿â.
+* // åˆå§‹åŒ–éšæœºç ä»“åº“.
 * randCodes.createRandCode(10);
 * randCodes.obtainCurrentCode();
 * randCodes.obtainRandCode();
 * </p>
 *
-* @Author: wchy£¬¼¼Êõ½»Á÷(891946049).
+* @Author: wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
 * 
-* @Date: 2018Äê6ÔÂ12ÈÕ ÏÂÎç2:59:44.
+* @Date: 2018å¹´6æœˆ12æ—¥ ä¸‹åˆ2:59:44.
 * 
 */
 public class MakeRandCode
 {
 
     /**
-     * ´óĞ´×ÖÄ¸¼¯.
+     * å¤§å†™å­—æ¯é›†.
      */
     private static final String LETTER_UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     /**
-     * Ëæ»úÉú³ÉÆ÷.
+     * éšæœºç”Ÿæˆå™¨.
      */
     private static final Random random = new Random();
     
     /**
-     * µ±Ç°Ëæ»úÂë£¬Éú³ÉËæ»úÂë³É¹¦ºó£¬ÓÃ»§¿ÉÒÔÍ¨¹ı·½·¨½Ó¿Ú»ñÈ¡¸ÃÖµ;Éú³ÉÊ§°ÜÔòÎªÉÏÒ»´Î³É¹¦µÄËæ»úÂë.
+     * å½“å‰éšæœºç ï¼Œç”Ÿæˆéšæœºç æˆåŠŸåï¼Œç”¨æˆ·å¯ä»¥é€šè¿‡æ–¹æ³•æ¥å£è·å–è¯¥å€¼;ç”Ÿæˆå¤±è´¥åˆ™ä¸ºä¸Šä¸€æ¬¡æˆåŠŸçš„éšæœºç .
      */
     private StringBuffer code = new StringBuffer();
 
     /**
-     * Ëæ»úÂë²Ö¿â,Ã¿¸öÈÎÎñÊ¹ÓÃÒ»¸öÄÚ´æ¶ÔÏó.
+     * éšæœºç ä»“åº“,æ¯ä¸ªä»»åŠ¡ä½¿ç”¨ä¸€ä¸ªå†…å­˜å¯¹è±¡.
      */
     private Map<String, String> codeMap = new HashMap<>();
     
     /**
-     * Ëæ»úÂëÏÂ±êË÷ÒıË³ĞòËæ»ú´òÂÒ,Ã¿¸öÈÎÎñÊ¹ÓÃÒ»¸öÄÚ´æ¶ÔÏó.
+     * éšæœºç ä¸‹æ ‡ç´¢å¼•é¡ºåºéšæœºæ‰“ä¹±,æ¯ä¸ªä»»åŠ¡ä½¿ç”¨ä¸€ä¸ªå†…å­˜å¯¹è±¡.
      */
     private List<Integer> codeOrder = new ArrayList<>();
 
     /**
-     * »º´æÊı¾İ¿ì,Ã¿¸öÈÎÎñÊ¹ÓÃÒ»¸öÄÚ´æ¶ÔÏó.
+     * ç¼“å­˜æ•°æ®å¿«,æ¯ä¸ªä»»åŠ¡ä½¿ç”¨ä¸€ä¸ªå†…å­˜å¯¹è±¡.
      */
     private StringBuffer sb = new StringBuffer();
     
     /**
-     * Ëæ»úÂë³¤¶È.
+     * éšæœºç é•¿åº¦.
      */
     private int length = 6;
     
     /**
-     * ×ÖÄ¸¸öÊı:.
+     * å­—æ¯ä¸ªæ•°:.
      */
     private int letterCount = 2;
     
     /**
-     * Êı×Ö¸öÊı:³¤¶È-×ÖÄ¸¸öÊı.
+     * æ•°å­—ä¸ªæ•°:é•¿åº¦-å­—æ¯ä¸ªæ•°.
      */
     private int digitCount = 4;
 
     /**
-     * ÎŞ²Î¹¹Ôìº¯Êı£¬³õÊ¼»¯Ëæ»úÂëÏÂ±êË÷ÒıË³Ğò.
+     * æ— å‚æ„é€ å‡½æ•°ï¼Œåˆå§‹åŒ–éšæœºç ä¸‹æ ‡ç´¢å¼•é¡ºåº.
      */
     public MakeRandCode()
     {
@@ -105,21 +105,21 @@ public class MakeRandCode
     }
     
     /**
-     * ÓĞ²Î¹¹Ôìº¯Êı£¬³õÊ¼»¯Ëæ»úÂëÏÂ±êË÷ÒıË³Ğò.
+     * æœ‰å‚æ„é€ å‡½æ•°ï¼Œåˆå§‹åŒ–éšæœºç ä¸‹æ ‡ç´¢å¼•é¡ºåº.
      * @param length
-     * 		Ëæ»úÂë³¤¶È:1~256.
+     * 		éšæœºç é•¿åº¦:1~256.
      * @param letterCount
-     * 		×ÖÄ¸¸öÊı:0~length.
+     * 		å­—æ¯ä¸ªæ•°:0~length.
      */
     public MakeRandCode(int length, int letterCount)
     {
-    	// length³¤¶È±ØĞë´óÓÚ0Ğ¡ÓÚµÈÓÚ256.
+    	// lengthé•¿åº¦å¿…é¡»å¤§äº0å°äºç­‰äº256.
     	if (length < 1 && length > 256) 
     	{
     		throw new IllegalArgumentException("Length must be greater than 0 and less than or equal to 256.");
     	}
     	
-    	// letterCount³¤¶È±ØĞë´óÓÚµÈÓÚ0Ğ¡ÓÚµÈÓÚ256.
+    	// letterCounté•¿åº¦å¿…é¡»å¤§äºç­‰äº0å°äºç­‰äº256.
     	if (letterCount < 0 && letterCount > length) 
     	{
     		throw new IllegalArgumentException("Length must be greater than 0 and less than or equal to 256.");
@@ -136,7 +136,7 @@ public class MakeRandCode
     }
 
     /**
-     * Éú²úËæ»úÂë·ÅÈëËæ»úÂë²Ö¿â,±£Ö¤²Ö¿âËæ»úÂë²»ÖØ¸´,³É¹¦·µ»Øtrue.
+     * ç”Ÿäº§éšæœºç æ”¾å…¥éšæœºç ä»“åº“,ä¿è¯ä»“åº“éšæœºç ä¸é‡å¤,æˆåŠŸè¿”å›true.
      * @return
      */
     public synchronized boolean createRandCode()
@@ -153,17 +153,17 @@ public class MakeRandCode
         	sb.append(random.nextInt(10));
         }
 
-        // Ëæ»ú´òÂÒËæ»úÂëÏÂ±êË÷ÒıË³Ğò.
+        // éšæœºæ‰“ä¹±éšæœºç ä¸‹æ ‡ç´¢å¼•é¡ºåº.
         Collections.shuffle(codeOrder);
 
-        // ±£´æËæ»úÂë.
+        // ä¿å­˜éšæœºç .
         code.delete(0, code.length());
         for (int i = 0; i < length; i++) 
         {
         	code.append(sb.charAt(codeOrder.get(i)));
         }
 
-        // ÒÑ¾­´æÔÚ´ËËæ»úÂëÔò·µ»Øfalse£¬task²»²Ù×÷£¬¼ÌĞøwhile.
+        // å·²ç»å­˜åœ¨æ­¤éšæœºç åˆ™è¿”å›falseï¼Œtaskä¸æ“ä½œï¼Œç»§ç»­while.
         if (codeMap.containsKey(code.toString()))
         {
             ret = false;
@@ -177,9 +177,9 @@ public class MakeRandCode
     }
     
     /**
-     * ÅúÁ¿Éú²úËæ»úÂë·ÅÈëËæ»úÂë²Ö¿â,Êµ¼Ê´æÈë²Ö¿âµÄËæ»úÂëÊıÎª0~maxCount,2/3Ô­Ôò.
+     * æ‰¹é‡ç”Ÿäº§éšæœºç æ”¾å…¥éšæœºç ä»“åº“,å®é™…å­˜å…¥ä»“åº“çš„éšæœºç æ•°ä¸º0~maxCount,2/3åŸåˆ™.
      * @param maxCount
-     * 		Åú´ÎÉú²úµÄËæ»úÂë×î´ó¸öÊı.
+     * 		æ‰¹æ¬¡ç”Ÿäº§çš„éšæœºç æœ€å¤§ä¸ªæ•°.
      */
     public void createRandCode(int maxCount)
     {
@@ -194,15 +194,15 @@ public class MakeRandCode
     }
     
     /**
-     * Íâ²¿Ëæ»úÂë·ÅÈëËæ»úÂë²Ö¿â,±£Ö¤²Ö¿âËæ»úÂë²»ÖØ¸´,³É¹¦·µ»Øtrue.
+     * å¤–éƒ¨éšæœºç æ”¾å…¥éšæœºç ä»“åº“,ä¿è¯ä»“åº“éšæœºç ä¸é‡å¤,æˆåŠŸè¿”å›true.
      * @param randCode
      * 		
      */
     public boolean createRandCode(String randCode) 
     {
     	boolean ret = true;
-    	
-		// Ğ£ÑécodeÊÇ·ñ·ûºÏËæ»úÂë²Ö¿âµÄËæ»úÂë¹æÔò.
+
+    	// æ ¡éªŒcodeæ˜¯å¦ç¬¦åˆéšæœºç ä»“åº“çš„éšæœºç è§„åˆ™.
     	if (StringUtils.isEmpty(randCode) || 
     			length != randCode.length() || 
     			digitCount != StringUtils.regexCount(randCode, "\\d") || 
@@ -211,21 +211,21 @@ public class MakeRandCode
     		throw new IllegalArgumentException("The data entered is illegal.");
     	} 
     	
-    	// ÒÑ¾­´æÔÚ´ËËæ»úÂëÔò·µ»Øfalse£¬task²»²Ù×÷£¬¼ÌĞøwhile.
-        if (codeMap.containsKey(randCode))
+    	// å·²ç»å­˜åœ¨æ­¤éšæœºç åˆ™è¿”å›falseï¼Œtaskä¸æ“ä½œï¼Œç»§ç»­while.
+    	if (codeMap.containsKey(randCode))
         {
-            ret = false;
+    		ret = false;
+    	} 
+    	else 
+    	{
+    		codeMap.put(randCode, randCode);
         }
-        else
-        {
-            codeMap.put(randCode, randCode);
-        }
-
-        return ret;
-	}
+    	
+    	return ret;
+    }
 
     /**
-     * »ñÈ¡µ±Ç°Ëæ»úÂë£¬ÊÇ×î½üÒ»´ÎÉú³É³É¹¦µÄËæ»úÂë.
+     * è·å–å½“å‰éšæœºç ï¼Œæ˜¯æœ€è¿‘ä¸€æ¬¡ç”ŸæˆæˆåŠŸçš„éšæœºç .
      * @return
      */
     public String obtainCurrentCode()
@@ -239,7 +239,7 @@ public class MakeRandCode
     }
     
     /**
-     * »ñÈ¡Ëæ»úÂë£¬Ëæ»úÂëÀ´×ÔËæ»úÂë²Ö¿â.
+     * è·å–éšæœºç ï¼Œéšæœºç æ¥è‡ªéšæœºç ä»“åº“.
      * @return
      */
     public String obtainRandCode() 
@@ -251,7 +251,7 @@ public class MakeRandCode
     	
     	String[] keys = codeMap.keySet().toArray(new String[0]);
     	return codeMap.get(keys[random.nextInt(keys.length)]);
-	}
-
+    }
+    
 }
 

@@ -2,10 +2,10 @@
 * @FileName: ListTreeOper.java
 * @Package: io.github.bincool.utils
 * @Copyright: 2018 bincool.github.io Inc. All Rights Reserved.
-* @Description: ListTreeOper.java: ListÊ÷ĞÎÊı¾İ²Ù×÷Àà.
-* @Author wchy£¬¼¼Êõ½»Á÷(891946049).
-* @Date 2018Äê6ÔÂ12ÈÕ ÏÂÎç8:57:36.
-* @Content: ĞÂÔö.
+* @Description: ListTreeOper.java: Listæ ‘å½¢æ•°æ®æ“ä½œç±».
+* @Author wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
+* @Date 2018å¹´6æœˆ12æ—¥ ä¸‹åˆ8:57:36.
+* @Content: æ–°å¢.
 * @Version: V1.0.
 */
 package io.github.bincool.utils;
@@ -21,79 +21,79 @@ import io.github.bincool.utils.commons.StringUtils;
 * 
 * @Description: 
 * <p>
-* ListÊ÷ĞÎÊı¾İ²Ù×÷Àà.
+* Listæ ‘å½¢æ•°æ®æ“ä½œç±».
 * </p>
 * <p>
-* ÏêÏ¸ÃèÊö£ºListÊ÷ĞÎÊı¾İ²Ù×÷Àà£¬Ö÷ÒªÓÃÓÚ½«ÀëÉ¢µÄ¾ßÓĞid-parentId¹ØÏµµÄÊı¾İ¼¯ºÏ·â×°³ÉListÊ÷ĞÎÊı¾İ½á¹¹.
+* è¯¦ç»†æè¿°ï¼šListæ ‘å½¢æ•°æ®æ“ä½œç±»ï¼Œä¸»è¦ç”¨äºå°†ç¦»æ•£çš„å…·æœ‰id-parentIdå…³ç³»çš„æ•°æ®é›†åˆå°è£…æˆListæ ‘å½¢æ•°æ®ç»“æ„.
 * </p>
 * <p>
-* Ê¾Àı´úÂë.
+* ç¤ºä¾‹ä»£ç .
 * </p>
 *
-* @Author: wchy£¬¼¼Êõ½»Á÷(891946049).
+* @Author: wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
 * 
-* @Date: 2018Äê6ÔÂ12ÈÕ ÏÂÎç8:57:36.
+* @Date: 2018å¹´6æœˆ12æ—¥ ä¸‹åˆ8:57:36.
 * 
 */
 @SuppressWarnings("rawtypes")
 public class ListTreeOper<T extends ListTreeBean> 
 {
+	
+	/**
+	 * æ ¹æ®æ ¹èŠ‚ç‚¹å’Œå¾…æ„é€ æ ‘çš„åˆ—è¡¨æŸ¥è¯¢æ ‘.
+	 * @param rootList
+	 * 		æ ¹èŠ‚ç‚¹åˆ—è¡¨.
+	 * @param dataList
+	 * 		å¾…æ„é€ æ ‘çš„åˆ—è¡¨.
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	public List<T> getListTree(List<T> rootList, List<T> dataList) 
+	{
+		// ä¸ºä¸€çº§æ ¹èœå•è®¾ç½®å­èœå•ï¼ŒgetChildæ˜¯é€’å½’è°ƒç”¨çš„.
+		for (T root : rootList) 
+		{
+			root.setChildList(getChild(root.getId(), dataList));
+		}
+		return rootList;
+	}
 
 	/**
-     * ¸ù¾İ¸ù½ÚµãºÍ´ı¹¹ÔìÊ÷µÄÁĞ±í²éÑ¯Ê÷.
-     * @param rootList
-     *      ¸ù½ÚµãÁĞ±í.
-     * @param dataList
-     *      ´ı¹¹ÔìÊ÷µÄÁĞ±í.
-     * @return
-     */
-    @SuppressWarnings("unchecked")
-	public List<T> getListTree(List<T> rootList, List<T> dataList)
-    {
-        // ÎªÒ»¼¶¸ù²Ëµ¥ÉèÖÃ×Ó²Ëµ¥£¬getChildÊÇµİ¹éµ÷ÓÃµÄ.
-        for (T root : rootList)
-        {
-            root.setChildList(getChild(root.getId(), dataList));
-        }
-        return rootList;
-    }
+	 * é€’å½’æŸ¥æ‰¾å­èœå•.
+	 * @param rootId
+	 * 		å½“å‰èœå•id.
+	 * @param dataList
+	 * 		è¦æŸ¥æ‰¾çš„åˆ—è¡¨.
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	private List<T> getChild(String rootId, List<T> dataList) 
+	{
+		// å­èœå•.
+		List<T> childList = new ArrayList<>();
+		for (T data : dataList) 
+		{
+			// éå†æ‰€æœ‰èŠ‚ç‚¹ï¼Œå°†çˆ¶èœå•idä¸ä¼ è¿‡æ¥çš„idæ¯”è¾ƒ.
+			if (StringUtils.isNotEmpty(data.getParentId()) && data.getParentId().equals(rootId)) 
+			{
+				childList.add(data);
+			}
+		}
 
-    /**
-     * µİ¹é²éÕÒ×Ó²Ëµ¥.
-     * @param rootId
-     * 		µ±Ç°²Ëµ¥id.
-     * @param dataList
-     * 		Òª²éÕÒµÄÁĞ±í.
-     * @return
-     */
-    @SuppressWarnings("unchecked")
-	private List<T> getChild(String rootId, List<T> dataList)
-    {
-        // ×Ó²Ëµ¥.
-        List<T> childList = new ArrayList<>();
-        for (T data : dataList)
-        {
-            // ±éÀúËùÓĞ½Úµã£¬½«¸¸²Ëµ¥idÓë´«¹ıÀ´µÄid±È½Ï.
-            if (StringUtils.isNotEmpty(data.getParentId()) && data.getParentId().equals(rootId))
-            {
-                childList.add(data);
-            }
-        }
+		// æŠŠå­èœå•çš„å­èœå•å†å¾ªç¯ä¸€é.
+		for (T child : childList) 
+		{
+			// é€’å½’.
+			child.setChildList(getChild(child.getId(), dataList));
+		}
 
-        // °Ñ×Ó²Ëµ¥µÄ×Ó²Ëµ¥ÔÙÑ­»·Ò»±é.
-        for (T child : childList)
-        {
-            // µİ¹é.
-            child.setChildList(getChild(child.getId(), dataList));
-        }
+		// é€’å½’é€€å‡ºæ¡ä»¶.
+		if (childList.isEmpty()) 
+		{
+			return null;
+		}
 
-        // µİ¹éÍË³öÌõ¼ş.
-        if (childList.isEmpty())
-        {
-            return null;
-        }
+		return childList;
+	}
 
-        return childList;
-    }
-    
 }

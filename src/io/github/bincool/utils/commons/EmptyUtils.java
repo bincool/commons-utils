@@ -2,10 +2,10 @@
 * @FileName: EmptyUtils.java
 * @Package: io.github.bincool.utils.commons
 * @Copyright: 2018 bincool.github.io Inc. All Rights Reserved.
-* @Description: EmptyUtils.java: ¿Õ¼ì²é¹¤¾ßÀà.
-* @Author wchy£¬¼¼Êõ½»Á÷(891946049).
-* @Date 2018Äê6ÔÂ22ÈÕ ÏÂÎç2:11:07.
-* @Content: ĞÂÔö.
+* @Description: EmptyUtils.java: ç©ºæ£€æŸ¥å·¥å…·ç±».
+* @Author wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
+* @Date 2018å¹´6æœˆ22æ—¥ ä¸‹åˆ2:11:07.
+* @Content: æ–°å¢.
 * @Version: V1.0.
 */
 package io.github.bincool.utils.commons;
@@ -17,25 +17,25 @@ import java.util.Collection;
 * 
 * @Description: 
 * <p>
-* ¿Õ¼ì²é¹¤¾ßÀà.
+* ç©ºæ£€æŸ¥å·¥å…·ç±».
 * </p>
 * <p>
-* ÏêÏ¸ÃèÊö.
+* è¯¦ç»†æè¿°.
 * </p>
 * <p>
-* Ê¾Àı´úÂë.
+* ç¤ºä¾‹ä»£ç .
 * </p>
 *
-* @Author: wchy£¬¼¼Êõ½»Á÷(891946049).
+* @Author: wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
 * 
-* @Date: 2018Äê6ÔÂ22ÈÕ ÏÂÎç2:11:07.
+* @Date: 2018å¹´6æœˆ22æ—¥ ä¸‹åˆ2:11:07.
 * 
 */
 public class EmptyUtils 
 {
 	
 	/**
-	 * Ë½ÓĞ¹¹Ôìº¯Êı.
+	 * ç§æœ‰æ„é€ å‡½æ•°.
 	 */
 	private EmptyUtils() 
 	{
@@ -43,20 +43,20 @@ public class EmptyUtils
 	}
 	
 	/**
-	 * ÅĞ¶Ï×Ö·û´®ÊÇ·ñÎª¿Õ£¬³¤¶ÈÎª0±»ÈÏÎªÊÇ¿Õ×Ö·û´®.
+	 * åˆ¤æ–­å­—ç¬¦ä¸²æ˜¯å¦ä¸ºç©ºï¼Œé•¿åº¦ä¸º0è¢«è®¤ä¸ºæ˜¯ç©ºå­—ç¬¦ä¸².
 	 * @param str
-	 * 		×Ö·û´®.
+	 * 		å­—ç¬¦ä¸².
 	 * @return
 	 */
-    public static boolean isEmpty(String str) 
-    {
-        return StringUtils.isEmpty(str);
-    }
+	public static boolean isEmpty(String str) 
+	{
+		return StringUtils.isEmpty(str);
+	}
     
     /**
-     * ÅĞ¶ÏÁĞ±íÊÇ·ñÎª¿Õ£¬ÁĞ±íÃ»ÓĞÔªËØÒ²±»ÈÏÎªÊÇ¿Õ.
+     * åˆ¤æ–­åˆ—è¡¨æ˜¯å¦ä¸ºç©ºï¼Œåˆ—è¡¨æ²¡æœ‰å…ƒç´ ä¹Ÿè¢«è®¤ä¸ºæ˜¯ç©º.
      * @param collection
-     * 		¼¯ºÏ.
+     * 		é›†åˆ.
      * @return
      */
     public static boolean isEmpty(Collection<?> collection) 
@@ -65,9 +65,9 @@ public class EmptyUtils
     }
     
     /**
-     * ÅĞ¶ÏÊı×éÊÇ·ñÎª¿Õ.
+     * åˆ¤æ–­æ•°ç»„æ˜¯å¦ä¸ºç©º.
      * @param array
-     * 		Êı×é.
+     * 		æ•°ç»„.
      * @return
      */
     public static boolean isEmpty(Object[] array) 
@@ -76,9 +76,9 @@ public class EmptyUtils
     }
     
     /**
-     * ÅĞ¶Ï¶ÔÏóÊÇ·ñÎª¿Õ.
+     * åˆ¤æ–­å¯¹è±¡æ˜¯å¦ä¸ºç©º.
      * @param obj
-     * 		¶ÔÏó.
+     * 		å¯¹è±¡.
      * @return
      */
     public static boolean isEmpty(Object obj) 

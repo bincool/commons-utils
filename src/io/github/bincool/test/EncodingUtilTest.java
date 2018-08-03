@@ -2,10 +2,10 @@
 * @FileName: EncodingUtilTest.java
 * @Package: io.github.bincool.test
 * @Copyright: 2018 bincool.github.io Inc. All Rights Reserved.
-* @Description: EncodingUtilTest.java: ×Ö·û¼¯±àÂë¹¤¾ß²âÊÔÀà.
-* @Author wchy£¬¼¼Êõ½»Á÷(891946049).
-* @Date 2018Äê8ÔÂ3ÈÕ ÏÂÎç5:06:00.
-* @Content: ĞÂÔö.
+* @Description: EncodingUtilTest.java: å­—ç¬¦é›†ç¼–ç å·¥å…·æµ‹è¯•ç±».
+* @Author wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
+* @Date 2018å¹´8æœˆ3æ—¥ ä¸‹åˆ5:06:00.
+* @Content: æ–°å¢.
 * @Version: V1.0.
 */
 package io.github.bincool.test;
@@ -17,31 +17,38 @@ import org.apache.commons.io.FileUtils;
 
 import io.github.bincool.encodingdetect.CharsetEncoding;
 import io.github.bincool.test.base.BaseTest;
+import io.github.bincool.utils.EncodingUtil;
 
 /**
 * @ClassName: EncodingUtilTest.java
 * 
 * @Description: 
 * <p>
-* ×Ö·û¼¯±àÂë¹¤¾ß²âÊÔÀà.
+* å­—ç¬¦é›†ç¼–ç å·¥å…·æµ‹è¯•ç±».
 * </p>
 * <p>
-* ÏêÏ¸ÃèÊö.
+* è¯¦ç»†æè¿°.
 * </p>
 * <p>
-* Ê¾Àı´úÂë.
+* ç¤ºä¾‹ä»£ç .
 * </p>
 *
-* @Author: wchy£¬¼¼Êõ½»Á÷(891946049).
+* @Author: wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
 * 
-* @Date: 2018Äê8ÔÂ3ÈÕ ÏÂÎç5:06:00.
+* @Date: 2018å¹´8æœˆ3æ—¥ ä¸‹åˆ5:06:00.
 * 
 */
 public class EncodingUtilTest extends BaseTest 
 {
 	
-	private static final String SRC_DIR_PATH = "D:\\Users\\bingV\\eclipse-workspace\\{project-name}\\src";
+	/**
+	 * æºç è·¯å¾„.
+	 */
+	private static final String SRC_DIR_PATH = System.getProperty("user.dir").replace("commons-utils", "{project-name}\\src");
 	
+	/**
+	 * å¾…è½¬æ¢ç¼–ç çš„é¡¹ç›®å.
+	 */
 	private static final String[] PROJECT_NAMES = 
 		{
 			"commons-encoding",
@@ -53,21 +60,11 @@ public class EncodingUtilTest extends BaseTest
 			"qrdoc",
 			"tools-secret",
 			};
-
-	/**
-	 * Ô´ÎÄ¼şÂ·¾¶.
-	 */
-	private static final String SRC_FILE_PATH = System.getProperty("user.dir") + "\\file\\EngineEvalUtils.java";
 	
 	/**
-	 * ×ª»»ºóµÄÎÄ¼şÂ·¾¶.
+	 * è½¬æ¢åçš„æ–‡ä»¶ç¼–ç .
 	 */
-	private static final String DEST_FILE_PATH = System.getProperty("user.dir") + "\\file1\\EngineEvalUtils.java";
-	
-	/**
-	 * ×ª»»ºóµÄÎÄ¼ş±àÂë.
-	 */
-	private static final String DEST_ENCODING = CharsetEncoding.GBK;
+	private static final String DEST_ENCODING = CharsetEncoding.UTF_8;
 	
 	/* (non-Javadoc)
 	 * @see io.github.bincool.test.base.BaseTest#setUp()
@@ -93,9 +90,7 @@ public class EncodingUtilTest extends BaseTest
 	@Override
 	public void test() throws Exception 
 	{
-		//EncodingUtil.conversionEncoding(SRC_FILE_PATH, DEST_FILE_PATH, DEST_ENCODING);
-		
-		
+		// å°†é¡¹ç›®ç¼–ç æ ¼å¼è½¬æ¢æˆUTF-8.
 		for (String PROJECT_NAME : PROJECT_NAMES) 
 		{
 			String scanPath = SRC_DIR_PATH.replace("{project-name}", PROJECT_NAME);
@@ -104,8 +99,9 @@ public class EncodingUtilTest extends BaseTest
 			
 			for (File javaFile : javaFiles) 
 			{
-				System.out.println(javaFile.getPath());
-				// ±àÂë×ª»»³ÉUTF-8.
+				LOGGER.info(javaFile.getPath());
+				// ç¼–ç è½¬æ¢æˆUTF-8.
+				EncodingUtil.conversionEncoding(javaFile.getPath(), javaFile.getPath(), DEST_ENCODING);
 			}
 		}
 		

@@ -2,10 +2,10 @@
 * @FileName: UtilExceprion.java
 * @Package: io.github.bincool.utils.commons
 * @Copyright: 2018 bincool.github.io Inc. All Rights Reserved.
-* @Description: UtilExceprion.java: ×Ô¶¨Òå¹¤¾ßjar°üÒì³£.
-* @Author wchy£¬¼¼Êõ½»Á÷(891946049).
-* @Date 2018Äê8ÔÂ1ÈÕ ÏÂÎç1:18:01.
-* @Content: ĞÂÔö.
+* @Description: UtilExceprion.java: è‡ªå®šä¹‰å·¥å…·jaråŒ…å¼‚å¸¸.
+* @Author wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
+* @Date 2018å¹´8æœˆ1æ—¥ ä¸‹åˆ1:18:01.
+* @Content: æ–°å¢.
 * @Version: V1.0.
 */
 package io.github.bincool.utils.commons;
@@ -15,30 +15,30 @@ package io.github.bincool.utils.commons;
 * 
 * @Description: 
 * <p>
-* ×Ô¶¨Òå¹¤¾ßjar°üÒì³£.
+* è‡ªå®šä¹‰å·¥å…·jaråŒ…å¼‚å¸¸.
 * </p>
 * <p>
-* ÏêÏ¸ÃèÊö.
+* è¯¦ç»†æè¿°.
 * </p>
 * <p>
-* Ê¾Àı´úÂë.
+* ç¤ºä¾‹ä»£ç .
 * </p>
 *
-* @Author: wchy£¬¼¼Êõ½»Á÷(891946049).
+* @Author: wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
 * 
-* @Date: 2018Äê8ÔÂ1ÈÕ ÏÂÎç1:18:01.
+* @Date: 2018å¹´8æœˆ1æ—¥ ä¸‹åˆ1:18:01.
 * 
 */
 public class UtilExceprion extends Exception 
 {
 
 	/**
-	 * ĞòÁĞ°æ±¾ºÅ.
+	 * åºåˆ—ç‰ˆæœ¬å·.
 	 */
 	private static final long serialVersionUID = 6537250181271003019L;
 	
 	/**
-	 * ¹¹Ôìº¯Êı.
+	 * æ„é€ å‡½æ•°.
 	 */
 	public UtilExceprion() 
 	{
@@ -46,9 +46,9 @@ public class UtilExceprion extends Exception
 	}
 	
 	/**
-	 * ¹¹Ôìº¯Êı.
+	 * æ„é€ å‡½æ•°.
 	 * @param message
-	 * 		Òì³£ĞÅÏ¢.
+	 * 		å¼‚å¸¸ä¿¡æ¯.
 	 */
 	public UtilExceprion(String message) 
 	{
@@ -56,9 +56,9 @@ public class UtilExceprion extends Exception
 	}
 	
 	/**
-	 * ¹¹Ôìº¯Êı.
+	 * æ„é€ å‡½æ•°.
 	 * @param cause
-	 * 		Òì³£Ô­Òò.
+	 * 		å¼‚å¸¸åŸå› .
 	 */
 	public UtilExceprion(Throwable cause) 
 	{
@@ -66,11 +66,11 @@ public class UtilExceprion extends Exception
 	}
 
 	/**
-	 * ¹¹Ôìº¯Êı.
+	 * æ„é€ å‡½æ•°.
 	 * @param message
-	 * 		Òì³£ĞÅÏ¢.
+	 * 		å¼‚å¸¸ä¿¡æ¯.
 	 * @param cause
-	 * 		Òì³£Ô­Òò.
+	 * 		å¼‚å¸¸åŸå› .
 	 */
 	public UtilExceprion(String message, Throwable cause) 
 	{

@@ -2,10 +2,10 @@
 * @FileName: UtilRuntimeException.java
 * @Package: io.github.bincool.utils.commons
 * @Copyright: 2018 bincool.github.io Inc. All Rights Reserved.
-* @Description: UtilRuntimeException.java: ×Ô¶¨Òå¹¤¾ßjar°üÔËĞĞÊ±Òì³£.
-* @Author wchy£¬¼¼Êõ½»Á÷(891946049).
-* @Date 2018Äê7ÔÂ31ÈÕ ÏÂÎç3:53:04.
-* @Content: ĞÂÔö.
+* @Description: UtilRuntimeException.java: è‡ªå®šä¹‰å·¥å…·jaråŒ…è¿è¡Œæ—¶å¼‚å¸¸.
+* @Author wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
+* @Date 2018å¹´7æœˆ31æ—¥ ä¸‹åˆ3:53:04.
+* @Content: æ–°å¢.
 * @Version: V1.0.
 */
 package io.github.bincool.utils.commons;
@@ -15,30 +15,30 @@ package io.github.bincool.utils.commons;
 * 
 * @Description: 
 * <p>
-* ×Ô¶¨Òå¹¤¾ßjar°üÔËĞĞÊ±Òì³£.
+* è‡ªå®šä¹‰å·¥å…·jaråŒ…è¿è¡Œæ—¶å¼‚å¸¸.
 * </p>
 * <p>
-* ÏêÏ¸ÃèÊö.
+* è¯¦ç»†æè¿°.
 * </p>
 * <p>
-* Ê¾Àı´úÂë.
+* ç¤ºä¾‹ä»£ç .
 * </p>
 *
-* @Author: wchy£¬¼¼Êõ½»Á÷(891946049).
+* @Author: wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
 * 
-* @Date: 2018Äê7ÔÂ31ÈÕ ÏÂÎç3:53:04.
+* @Date: 2018å¹´7æœˆ31æ—¥ ä¸‹åˆ3:53:04.
 * 
 */
 public class UtilRuntimeException extends RuntimeException 
 {
 
 	/**
-	 * ĞòÁĞ°æ±¾ºÅ.
+	 * åºåˆ—ç‰ˆæœ¬å·.
 	 */
 	private static final long serialVersionUID = -8977334559091740930L;
 	
 	/**
-	 * ¹¹Ôìº¯Êı.
+	 * æ„é€ å‡½æ•°.
 	 */
 	public UtilRuntimeException() 
 	{
@@ -46,9 +46,9 @@ public class UtilRuntimeException extends RuntimeException
 	}
 	
 	/**
-	 * ¹¹Ôìº¯Êı.
+	 * æ„é€ å‡½æ•°.
 	 * @param message
-	 * 		Òì³£ĞÅÏ¢.
+	 * 		å¼‚å¸¸ä¿¡æ¯.
 	 */
 	public UtilRuntimeException(String message) 
 	{
@@ -56,9 +56,9 @@ public class UtilRuntimeException extends RuntimeException
 	}
 	
 	/**
-	 * ¹¹Ôìº¯Êı.
+	 * æ„é€ å‡½æ•°.
 	 * @param cause
-	 * 		Òì³£Ô­Òò.
+	 * 		å¼‚å¸¸åŸå› .
 	 */
 	public UtilRuntimeException(Throwable cause) 
 	{
@@ -66,11 +66,11 @@ public class UtilRuntimeException extends RuntimeException
 	}
 	
 	/**
-	 * ¹¹Ôìº¯Êı.
+	 * æ„é€ å‡½æ•°.
 	 * @param message
-	 * 		Òì³£ĞÅÏ¢.
+	 * 		å¼‚å¸¸ä¿¡æ¯.
 	 * @param cause
-	 * 		Òì³£Ô­Òò.
+	 * 		å¼‚å¸¸åŸå› .
 	 */
 	public UtilRuntimeException(String message, Throwable cause) 
 	{

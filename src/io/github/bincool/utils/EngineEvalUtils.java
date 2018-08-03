@@ -2,10 +2,10 @@
 * @FileName: EngineEvalUtils.java
 * @Package: io.github.bincool.utils
 * @Copyright: 2018 bincool.github.io Inc. All Rights Reserved.
-* @Description: EngineEvalUtils.java: ÖÇÄÜËã·¨£¬JsÒıÇæÖ´ĞĞ¼ÆËã±í´ïÊ½.
-* @Author wchy£¬¼¼Êõ½»Á÷(891946049).
-* @Date 2018Äê6ÔÂ12ÈÕ ÏÂÎç10:00:56.
-* @Content: ĞÂÔö.
+* @Description: EngineEvalUtils.java: æ™ºèƒ½ç®—æ³•ï¼ŒJså¼•æ“æ‰§è¡Œè®¡ç®—è¡¨è¾¾å¼.
+* @Author wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
+* @Date 2018å¹´6æœˆ12æ—¥ ä¸‹åˆ10:00:56.
+* @Content: æ–°å¢.
 * @Version: V1.0.
 */
 package io.github.bincool.utils;
@@ -29,299 +29,298 @@ import java.util.regex.Pattern;
 * 
 * @Description: 
 * <p>
-* ÖÇÄÜËã·¨£¬JsÒıÇæÖ´ĞĞ¼ÆËã±í´ïÊ½.
+* æ™ºèƒ½ç®—æ³•ï¼ŒJså¼•æ“æ‰§è¡Œè®¡ç®—è¡¨è¾¾å¼.
 * </p>
 * <p>
-* ÏêÏ¸ÃèÊö:ÖÇÄÜËã·¨£¬JsÒıÇæÖ´ĞĞ¼ÆËã±í´ïÊ½.
+* è¯¦ç»†æè¿°:æ™ºèƒ½ç®—æ³•ï¼ŒJså¼•æ“æ‰§è¡Œè®¡ç®—è¡¨è¾¾å¼.
 * </p>
 * <p>
-* Ê¾Àı´úÂë.
-* // 1 ²ÎÊı×¼±¸.
+* ç¤ºä¾‹ä»£ç .
+* // 1 å‚æ•°å‡†å¤‡.
 * Map<String, Object> params = new HashMap<String, Object>();
-* params.put("³¤", 5);
-* params.put("¸ß", 3);
+* params.put("é•¿", 5);
+* params.put("é«˜", 3);
 *
-* // 2 ±í´ïÊ½×¼±¸£º¿ÉÍ¨¹ıÊı¾İ²éÑ¯»ò×ÔÖ÷¹¹Ôì£¬ÆäÖĞreturnµÄ±í´ïÊ½ºóĞèÓÃÓ¢ÎÄ¶ººÅ½áÊø(ÓÃÓÚÆ¥Åä¾ßÌå¼ÆËã¹ı³Ì).
-* // returnÖ÷ÒªÓÃÓÚifÌõ¼ş·ÖÖ§ºÍfunctionº¯ÊıÖ®ÖĞ£¬µ±Ö»ÓĞÒ»¸ö±í´ïÊ½(Ã»ÓĞ·ÖÖ§ÅĞ¶ÏÒ²²»ÊÇº¯Êı)Ê±Ö±½ÓÊéĞ´Ò»ĞĞ±í´ïÊ½¼´¿ÉÎãĞëÌí¼Ó½áÊø·û.
-* // formula = "if([³¤]>300){return 5;}else{return 6;}";
+* // 2 è¡¨è¾¾å¼å‡†å¤‡ï¼šå¯é€šè¿‡æ•°æ®æŸ¥è¯¢æˆ–è‡ªä¸»æ„é€ ï¼Œå…¶ä¸­returnçš„è¡¨è¾¾å¼åéœ€ç”¨è‹±æ–‡é€—å·ç»“æŸ(ç”¨äºåŒ¹é…å…·ä½“è®¡ç®—è¿‡ç¨‹).
+* // returnä¸»è¦ç”¨äºifæ¡ä»¶åˆ†æ”¯å’Œfunctionå‡½æ•°ä¹‹ä¸­ï¼Œå½“åªæœ‰ä¸€ä¸ªè¡¨è¾¾å¼(æ²¡æœ‰åˆ†æ”¯åˆ¤æ–­ä¹Ÿä¸æ˜¯å‡½æ•°)æ—¶ç›´æ¥ä¹¦å†™ä¸€è¡Œè¡¨è¾¾å¼å³å¯æ¯‹é¡»æ·»åŠ ç»“æŸç¬¦.
+* // formula = "if([é•¿]>300){return 5;}else{return 6;}";
 * // formula = "function cal() { return 100;}";
-* String formula = "[³¤]*[¿í]";
+* String formula = "[é•¿]*[å®½]";
 *
-* // 3.1 ÖÇÄÜ¼ÆËã½á¹û.
+* // 3.1 æ™ºèƒ½è®¡ç®—ç»“æœ.
 * Object calResult = EngineEvalUtils.smartCal(formula, params);
 * System.out.println(calResult);
 *
 *
-* // 3.2 ÖÇÄÜ»ñÈ¡±í´ïÊ½¼ÆËã¹ı³Ì.
+* // 3.2 æ™ºèƒ½è·å–è¡¨è¾¾å¼è®¡ç®—è¿‡ç¨‹.
 * Object formulaResult = EngineEvalUtils.smartFormula(formula, params);
 * System.out.println(formulaResult);
 * </p>
 *
-* @Author: wchy£¬¼¼Êõ½»Á÷(891946049).
+* @Author: wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
 * 
-* @Date: 2018Äê6ÔÂ12ÈÕ ÏÂÎç10:00:56.
+* @Date: 2018å¹´6æœˆ12æ—¥ ä¸‹åˆ10:00:56.
 * 
 */
 public class EngineEvalUtils 
 {
-	
+
 	/**
 	 * final string : return.
 	 */
 	private static final String FINAL_STR_RETURN = "return";
-	
+
 	/**
-	 * final string : ±í´ïÊ½¹«Ê½²»ºÏ·¨£¬formula = .
+	 * final string : è¡¨è¾¾å¼å…¬å¼ä¸åˆæ³•ï¼Œformula = .
 	 */
-	private static final String FINAL_STR_ILLEGAL_PROMPT = "±í´ïÊ½¹«Ê½²»ºÏ·¨£¬formula = ";
-	
-    /**
-     * ÕıÔò±í´ïÊ½Æ¥ÅäÓÃ»§ÊäÈëµÄº¯ÊıÃûºÍ²ÎÊı.
-     */
-    private static final Pattern patternFuncName = Pattern.compile("function([^\\{]*)\\{");
+	private static final String FINAL_STR_ILLEGAL_PROMPT = "è¡¨è¾¾å¼å…¬å¼ä¸åˆæ³•ï¼Œformula = ";
 
-    /**
-     * ÕıÔò±í´ïÊ½Æ¥ÅäÓÃ»§ÊäÈëµÄº¯ÊıÃûºÍ²ÎÊı.
-     */
-    private static final Pattern patternFormula = Pattern.compile("return([^;]*);");
-    
-    /**
-     * Ë½ÓĞ¹¹Ôìº¯Êı.
-     */
-    private EngineEvalUtils() 
-    {
-    	throw new IllegalStateException("Utility class");
-    }
+	/**
+	 * æ­£åˆ™è¡¨è¾¾å¼åŒ¹é…ç”¨æˆ·è¾“å…¥çš„å‡½æ•°åå’Œå‚æ•°.
+	 */
+	private static final Pattern patternFuncName = Pattern.compile("function([^\\{]*)\\{");
 
-    /**
-     * ÖÇÄÜËã·¨£¬JsÒıÇæÖ´ĞĞ¼ÆËã±í´ïÊ½.
-     * @param formula
-     * 		¼ÆËã±í´ïÊ½£¬¿ÉÒÔº¬function,if,returnµÈ¹Ø¼ü×Ö.
-     * @param params
-     * 		¼ÆËã±í´ïÊ½ËùĞèµÄ²ÎÊı.
-     * @return
-     * @throws ScriptException 
-     * @throws NoSuchMethodException 
-     * @throws Exception
-     */
-    public static Object smartCal(String formula, Map<String, Object> params) throws NoSuchMethodException, ScriptException
-    {
-        // ±í´ïÊ½¼ì²â.
-        if (StringUtils.isEmpty(formula))
-        {
-            throw new IllegalArgumentException("±í´ïÊ½²»ºÏ·¨£¬formula = " + formula);
-        }
+	/**
+	 * æ­£åˆ™è¡¨è¾¾å¼åŒ¹é…ç”¨æˆ·è¾“å…¥çš„å‡½æ•°åå’Œå‚æ•°.
+	 */
+	private static final Pattern patternFormula = Pattern.compile("return([^;]*);");
 
-        // ±í´ïÊ½´¦Àí.
-        formula = formula.trim().replaceAll("\\[", "").replaceAll("\\]", "");
+	/**
+	 * ç§æœ‰æ„é€ å‡½æ•°.
+	 */
+	private EngineEvalUtils() 
+	{
+		throw new IllegalStateException("Utility class");
+	}
 
-        // JavaScript½Å±¾ÒıÇæ.
-        ScriptEngineManager manager = new ScriptEngineManager();
-        ScriptEngine engine = manager.getEngineByName("JavaScript");
+	/**
+	 * æ™ºèƒ½ç®—æ³•ï¼ŒJså¼•æ“æ‰§è¡Œè®¡ç®—è¡¨è¾¾å¼.
+	 * @param formula
+	 * 		è®¡ç®—è¡¨è¾¾å¼ï¼Œå¯ä»¥å«function,if,returnç­‰å…³é”®å­—.
+	 * @param params
+	 * 		è®¡ç®—è¡¨è¾¾å¼æ‰€éœ€çš„å‚æ•°.
+	 * @return
+	 * @throws ScriptException
+	 * @throws NoSuchMethodException
+	 * @throws Exception
+	 */
+	public static Object smartCal(String formula, Map<String, Object> params) throws NoSuchMethodException, ScriptException 
+	{
+		// è¡¨è¾¾å¼æ£€æµ‹.
+		if (StringUtils.isEmpty(formula)) 
+		{
+			throw new IllegalArgumentException("è¡¨è¾¾å¼ä¸åˆæ³•ï¼Œformula = " + formula);
+		}
 
-        // Ëã·¨ËùĞè²ÎÊı±äÁ¿¸³Öµ-È«¾Ö±äÁ¿ÉùÃ÷¸³Öµ.
-        if (null != params)
-        {
-            for(Map.Entry<String, Object> entry : params.entrySet())
-            {
-                 if (null != entry.getValue())
-                 {
-                     engine.put(entry.getKey(), new BigDecimal(entry.getValue().toString()));
-                 }
-                 else
-                 {
-                     engine.put(entry.getKey(), 0);
-                 }
-            }
-        }
+		// è¡¨è¾¾å¼å¤„ç†.
+		formula = formula.trim().replaceAll("\\[", "").replaceAll("\\]", "");
 
-        // ÀûÓÃJsÒıÇæ¹¤¾ßµ÷ÓÃJsº¯ÊıÖ´ĞĞ¼ÆËã±í´ïÊ½.
-        return smartFormula(engine, formula);
-    }
+		// JavaScriptè„šæœ¬å¼•æ“.
+		ScriptEngineManager manager = new ScriptEngineManager();
+		ScriptEngine engine = manager.getEngineByName("JavaScript");
 
-    /**
-     * ÖÇÄÜËã·¨£¬JsÒıÇæ·µ»Ø¼ÆËã±í´ïÊ½(ÎŞ±äÁ¿([variableName])¹«Ê½).
-     * @param formula
-     *      ¼ÆËã±í´ïÊ½£¬¿ÉÒÔº¬function,if,returnµÈ¹Ø¼ü×Ö.
-     * @param params
-     * 		¼ÆËã±í´ïÊ½ËùĞèµÄ²ÎÊı.
-     * @return
-     * @throws ScriptException 
-     * @throws NoSuchMethodException 
-     * @throws Exception
-     */
-    public static Object smartFormula(String formula, Map<String, Object> params) throws NoSuchMethodException, ScriptException
-    {
-        // ÖÇÄÜËã·¨Ö´ĞĞ½á¹û.
-        Object formulaResult = null;
+		// ç®—æ³•æ‰€éœ€å‚æ•°å˜é‡èµ‹å€¼-å…¨å±€å˜é‡å£°æ˜èµ‹å€¼.
+		if (null != params) 
+		{
+			for (Map.Entry<String, Object> entry : params.entrySet()) 
+			{
+				if (null != entry.getValue()) 
+				{
+					engine.put(entry.getKey(), new BigDecimal(entry.getValue().toString()));
+				} 
+				else 
+				{
+					engine.put(entry.getKey(), 0);
+				}
+			}
+		}
 
-        // ±í´ïÊ½¼ì²â.
-        if (StringUtils.isEmpty(formula))
-        {
-            throw new IllegalArgumentException(FINAL_STR_ILLEGAL_PROMPT + formula);
-        }
+		// åˆ©ç”¨Jså¼•æ“å·¥å…·è°ƒç”¨Jså‡½æ•°æ‰§è¡Œè®¡ç®—è¡¨è¾¾å¼.
+		return smartFormula(engine, formula);
+	}
 
-        // ±í´ïÊ½´¦Àí.
-        formula = formula.trim();
+	/**
+	 * æ™ºèƒ½ç®—æ³•ï¼ŒJså¼•æ“è¿”å›è®¡ç®—è¡¨è¾¾å¼(æ— å˜é‡([variableName])å…¬å¼).
+	 * @param formula
+	 * 		è®¡ç®—è¡¨è¾¾å¼ï¼Œå¯ä»¥å«function,if,returnç­‰å…³é”®å­—.
+	 * @param params
+	 * 		è®¡ç®—è¡¨è¾¾å¼æ‰€éœ€çš„å‚æ•°.
+	 * @return
+	 * @throws ScriptException
+	 * @throws NoSuchMethodException
+	 * @throws Exception
+	 */
+	public static Object smartFormula(String formula, Map<String, Object> params) throws NoSuchMethodException, ScriptException 
+	{
+		// æ™ºèƒ½ç®—æ³•æ‰§è¡Œç»“æœ.
+		Object formulaResult = null;
 
-        // ÓĞreturn¹Ø¼ü×Ö£¬ÔòÌáÈ¡returnÓë½áÊø·û(;)Ö®¼äµÄ¼ÆËã±í´ïÊ½.
-        if (formula.contains(FINAL_STR_RETURN))
-        {
-            // ±í´ïÊ½¼ì²é.
-            if (!formula.contains(";"))
-            {
-                throw new IllegalArgumentException(FINAL_STR_ILLEGAL_PROMPT + formula);
-            }
-            
-            // ²éÕÒ¼ÆËã±í´ïÊ½.
-            formulaResult = findFormula(formula, params);
-        }
-        else
-        {
-        	// µ¥ĞĞ¼ÆËã±í´ïÊ½.
-            formulaResult = formula(formula, params);
-        }
+		// è¡¨è¾¾å¼æ£€æµ‹.
+		if (StringUtils.isEmpty(formula)) 
+		{
+			throw new IllegalArgumentException(FINAL_STR_ILLEGAL_PROMPT + formula);
+		}
 
-        return formulaResult;
-    }
+		// è¡¨è¾¾å¼å¤„ç†.
+		formula = formula.trim();
 
-    /**
-     * ÖÇÄÜËã·¨£¬JsÒıÇæ·µ»Ø¼ÆËã±í´ïÊ½(ÎŞ±äÁ¿([variableName])¹«Ê½).
-     * @param formula
-     *      ¼ÆËã±í´ïÊ½£¬²»º¬function,if,return.
-     * @param params
-     * 		¼ÆËã±í´ïÊ½ËùĞèµÄ²ÎÊı.
-     * @return
-     * @throws ScriptException 
-     * @throws NoSuchMethodException 
-     * @throws Exception
-     */
-    public static Object formula(String formula, Map<String, Object> params) throws NoSuchMethodException, ScriptException
-    {
-        // ÖÇÄÜËã·¨Ö´ĞĞ½á¹û.
-        Object formulaResult = null;
+		// æœ‰returnå…³é”®å­—ï¼Œåˆ™æå–returnä¸ç»“æŸç¬¦(;)ä¹‹é—´çš„è®¡ç®—è¡¨è¾¾å¼.
+		if (formula.contains(FINAL_STR_RETURN)) 
+		{
+			// è¡¨è¾¾å¼æ£€æŸ¥.
+			if (!formula.contains(";")) 
+			{
+				throw new IllegalArgumentException(FINAL_STR_ILLEGAL_PROMPT + formula);
+			}
 
-        // ±í´ïÊ½¼ì²â.
-        if (StringUtils.isEmpty(formula) || formula.contains("if") || formula.contains(FINAL_STR_RETURN) || formula.contains("function"))
-        {
-            throw new IllegalArgumentException(FINAL_STR_ILLEGAL_PROMPT + formula);
-        }
+			// æŸ¥æ‰¾è®¡ç®—è¡¨è¾¾å¼.
+			formulaResult = findFormula(formula, params);
+		} 
+		else 
+		{
+			// å•è¡Œè®¡ç®—è¡¨è¾¾å¼.
+			formulaResult = formula(formula, params);
+		}
 
-        // ±í´ïÊ½´¦Àí.
-        formula = formula.trim();
+		return formulaResult;
+	}
 
-        // ±äÁ¿¼ì²é£¬ÓĞ±äÁ¿ÔòÌæ»»±äÁ¿ÎªÕæÊµ¼ÆËãÊıÖµ.
-        if (formula.contains("[") && formula.contains("]"))
-        {
-            formula = "'formula'".replace("formula", formula.trim());
-            formula = formula.replaceAll("\\[", "'+").replaceAll("\\]", "+'");
-            formulaResult = smartCal(formula, params);
-        }
-        else
-        {
-            formulaResult = formula;
-        }
+	/**
+	 * æ™ºèƒ½ç®—æ³•ï¼ŒJså¼•æ“è¿”å›è®¡ç®—è¡¨è¾¾å¼(æ— å˜é‡([variableName])å…¬å¼).
+	 * @param formula
+	 * 		è®¡ç®—è¡¨è¾¾å¼ï¼Œä¸å«function,if,return.
+	 * @param params
+	 * 		è®¡ç®—è¡¨è¾¾å¼æ‰€éœ€çš„å‚æ•°.
+	 * @return
+	 * @throws ScriptException
+	 * @throws NoSuchMethodException
+	 * @throws Exception
+	 */
+	public static Object formula(String formula, Map<String, Object> params) throws NoSuchMethodException, ScriptException 
+	{
+		// æ™ºèƒ½ç®—æ³•æ‰§è¡Œç»“æœ.
+		Object formulaResult = null;
 
-        return formulaResult;
-    }
-    
-    /**
-     * ÀûÓÃJsÒıÇæ¹¤¾ßµ÷ÓÃJsº¯ÊıÖ´ĞĞ¼ÆËã±í´ïÊ½.
-     * @param engine
-     * 		JsÒıÇæ.
-     * @param formula
-     * 		¼ÆËã±í´ïÊ½£¬¿ÉÒÔº¬function,if,returnµÈ¹Ø¼ü×Ö.
-     * @return
-     * 		ÖÇÄÜËã·¨Ö´ĞĞ½á¹û.
-     * @throws ScriptException
-     * @throws NoSuchMethodException
-     */
-    private static Object smartFormula(ScriptEngine engine, String formula) throws ScriptException, NoSuchMethodException 
-    {
-    	// ÖÇÄÜËã·¨Ö´ĞĞ½á¹û.
-        Object calResult = null;
-        
-    	// Jsº¯ÊıÖ´ĞĞ.
-        Invocable invocable = null;
-        if (formula.contains("function"))
-        {
-            Matcher matcher = patternFuncName.matcher(formula);
-            if (matcher.find())
-            {
-                formula = formula.replace(matcher.group(1), " smartCal() ");
-                engine.eval(formula);
-                invocable = (Invocable) engine;
-                calResult = invocable.invokeFunction("smartCal", new Object());
-            }
-            else
-            {
-                throw new IllegalArgumentException("±í´ïÊ½²»ºÏ·¨£¬formula = " + formula);
-            }
-        }
-        // °ü×°µ½jsº¯ÊıÌåÖĞÖ´ĞĞ.
-        else if (formula.contains("if") || formula.contains(FINAL_STR_RETURN))
-        {
-            formula = "function smartCal() {formula}".replace("formula", formula);
-            engine.eval(formula);
-            invocable = (Invocable) engine;
-            calResult = invocable.invokeFunction("smartCal", new Object());
-        }
-        // Ö±½ÓÖ´ĞĞ±í´ïÊ½.
-        else
-        {
-            calResult = engine.eval(formula);
-        }
-        
-        return calResult;
-    }
-    
-    /**
-     * ²éÕÒ¼ÆËã±í´ïÊ½.¶Ô±í´ïÊ½½øĞĞ¼ÆËã¶Ô±È£¬È·¶¨¾ßÌåËùÓÃµÄ±í´ïÊ½£¬²¢¶Ô±äÁ¿ÓÃÕæÊµÊıÖµ½øĞĞÌæ»».
-     * @param formula
-     * 		¼ÆËã±í´ïÊ½£¬¿ÉÒÔº¬function,if,returnµÈ¹Ø¼ü×Ö.
-     * @param params
-     * 		¼ÆËã±í´ïÊ½ËùĞèµÄ²ÎÊı.
-     * @return
-     */
-    private static Object findFormula(String formula, Map<String, Object> params) 
-    {
-    	// ÖÇÄÜËã·¨Ö´ĞĞ½á¹û.
-        Object formulaResult = null;
-        
-    	// ÕıÔòÆ¥ÅäÓĞÄÄ¼¸ÖÖ±í´ïÊ½.
-        List<String> formulaList = new ArrayList<>();
-        Matcher matcher = patternFormula.matcher(formula);
-        while (matcher.find())
-        {
-            formulaList.add(matcher.group(1));
-        }
-        
-        // ¶Ô±í´ïÊ½½øĞĞ¼ÆËã¶Ô±È£¬È·¶¨¾ßÌåËùÓÃµÄ±í´ïÊ½£¬²¢¶Ô±äÁ¿ÓÃÕæÊµÊıÖµ½øĞĞÌæ»».
-    	try
-        {
-            Number smartCalResult = (Number)smartCal(formula, params);
+		// è¡¨è¾¾å¼æ£€æµ‹.
+		if (StringUtils.isEmpty(formula) || formula.contains("if") || formula.contains(FINAL_STR_RETURN) || formula.contains("function")) 
+		{
+			throw new IllegalArgumentException(FINAL_STR_ILLEGAL_PROMPT + formula);
+		}
 
-            for (String tmpFormula : formulaList)
-            {
-                Number tmp = (Number)smartCal(tmpFormula, params);
-                if (smartCalResult.doubleValue() == tmp.doubleValue())
-                {
-                    formulaResult = formula(tmpFormula, params);
-                    break;
-                }
-            }
+		// è¡¨è¾¾å¼å¤„ç†.
+		formula = formula.trim();
 
-            if (null == formulaResult)
-            {
-                throw new IllegalArgumentException(FINAL_STR_ILLEGAL_PROMPT + formula);
-            }
-        }
-        catch (Exception e)
-        {
-            throw new IllegalArgumentException(FINAL_STR_ILLEGAL_PROMPT + formula);
-        }
-    	
-    	return formulaResult;
-    }
-	
+		// å˜é‡æ£€æŸ¥ï¼Œæœ‰å˜é‡åˆ™æ›¿æ¢å˜é‡ä¸ºçœŸå®è®¡ç®—æ•°å€¼.
+		if (formula.contains("[") && formula.contains("]")) 
+		{
+			formula = "'formula'".replace("formula", formula.trim());
+			formula = formula.replaceAll("\\[", "'+").replaceAll("\\]", "+'");
+			formulaResult = smartCal(formula, params);
+		} 
+		else 
+		{
+			formulaResult = formula;
+		}
+
+		return formulaResult;
+	}
+
+	/**
+	 * åˆ©ç”¨Jså¼•æ“å·¥å…·è°ƒç”¨Jså‡½æ•°æ‰§è¡Œè®¡ç®—è¡¨è¾¾å¼.
+	 * @param engine
+	 * 		Jså¼•æ“.
+	 * @param formula
+	 * 		è®¡ç®—è¡¨è¾¾å¼ï¼Œå¯ä»¥å«function,if,returnç­‰å…³é”®å­—.
+	 * @return æ™ºèƒ½ç®—æ³•æ‰§è¡Œç»“æœ.
+	 * @throws ScriptException
+	 * @throws NoSuchMethodException
+	 */
+	private static Object smartFormula(ScriptEngine engine, String formula) throws ScriptException, NoSuchMethodException 
+	{
+		// æ™ºèƒ½ç®—æ³•æ‰§è¡Œç»“æœ.
+		Object calResult = null;
+
+		// Jså‡½æ•°æ‰§è¡Œ.
+		Invocable invocable = null;
+		if (formula.contains("function")) 
+		{
+			Matcher matcher = patternFuncName.matcher(formula);
+			if (matcher.find()) 
+			{
+				formula = formula.replace(matcher.group(1), " smartCal() ");
+				engine.eval(formula);
+				invocable = (Invocable) engine;
+				calResult = invocable.invokeFunction("smartCal", new Object());
+			} 
+			else 
+			{
+				throw new IllegalArgumentException("è¡¨è¾¾å¼ä¸åˆæ³•ï¼Œformula = " + formula);
+			}
+		}
+		// åŒ…è£…åˆ°jså‡½æ•°ä½“ä¸­æ‰§è¡Œ.
+		else if (formula.contains("if") || formula.contains(FINAL_STR_RETURN)) 
+		{
+			formula = "function smartCal() {formula}".replace("formula", formula);
+			engine.eval(formula);
+			invocable = (Invocable) engine;
+			calResult = invocable.invokeFunction("smartCal", new Object());
+		}
+		// ç›´æ¥æ‰§è¡Œè¡¨è¾¾å¼.
+		else 
+		{
+			calResult = engine.eval(formula);
+		}
+
+		return calResult;
+	}
+
+	/**
+	 * æŸ¥æ‰¾è®¡ç®—è¡¨è¾¾å¼.å¯¹è¡¨è¾¾å¼è¿›è¡Œè®¡ç®—å¯¹æ¯”ï¼Œç¡®å®šå…·ä½“æ‰€ç”¨çš„è¡¨è¾¾å¼ï¼Œå¹¶å¯¹å˜é‡ç”¨çœŸå®æ•°å€¼è¿›è¡Œæ›¿æ¢.
+	 * @param formula
+	 * 		è®¡ç®—è¡¨è¾¾å¼ï¼Œå¯ä»¥å«function,if,returnç­‰å…³é”®å­—.
+	 * @param params
+	 * 		è®¡ç®—è¡¨è¾¾å¼æ‰€éœ€çš„å‚æ•°.
+	 * @return
+	 */
+	private static Object findFormula(String formula, Map<String, Object> params) 
+	{
+		// æ™ºèƒ½ç®—æ³•æ‰§è¡Œç»“æœ.
+		Object formulaResult = null;
+
+		// æ­£åˆ™åŒ¹é…æœ‰å“ªå‡ ç§è¡¨è¾¾å¼.
+		List<String> formulaList = new ArrayList<>();
+		Matcher matcher = patternFormula.matcher(formula);
+		while (matcher.find()) 
+		{
+			formulaList.add(matcher.group(1));
+		}
+
+		// å¯¹è¡¨è¾¾å¼è¿›è¡Œè®¡ç®—å¯¹æ¯”ï¼Œç¡®å®šå…·ä½“æ‰€ç”¨çš„è¡¨è¾¾å¼ï¼Œå¹¶å¯¹å˜é‡ç”¨çœŸå®æ•°å€¼è¿›è¡Œæ›¿æ¢.
+		try 
+		{
+			Number smartCalResult = (Number) smartCal(formula, params);
+
+			for (String tmpFormula : formulaList) 
+			{
+				Number tmp = (Number) smartCal(tmpFormula, params);
+				if (smartCalResult.doubleValue() == tmp.doubleValue()) 
+				{
+					formulaResult = formula(tmpFormula, params);
+					break;
+				}
+			}
+
+			if (null == formulaResult) 
+			{
+				throw new IllegalArgumentException(FINAL_STR_ILLEGAL_PROMPT + formula);
+			}
+		} 
+		catch (Exception e) 
+		{
+			throw new IllegalArgumentException(FINAL_STR_ILLEGAL_PROMPT + formula);
+		}
+
+		return formulaResult;
+	}
+
 }

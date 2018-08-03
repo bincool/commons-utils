@@ -2,10 +2,10 @@
 * @FileName: FileHelperTest.java
 * @Package: io.github.bincool.test
 * @Copyright: 2018 bincool.github.io Inc. All Rights Reserved.
-* @Description: FileHelperTest.java: ÎÄ¼ş°ïÖúÀà²âÊÔ.
-* @Author wchy£¬¼¼Êõ½»Á÷(891946049).
-* @Date 2018Äê6ÔÂ22ÈÕ ÏÂÎç4:42:49.
-* @Content: ĞÂÔö.
+* @Description: FileHelperTest.java: æ–‡ä»¶å¸®åŠ©ç±»æµ‹è¯•.
+* @Author wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
+* @Date 2018å¹´6æœˆ22æ—¥ ä¸‹åˆ4:42:49.
+* @Content: æ–°å¢.
 * @Version: V1.0.
 */
 package io.github.bincool.test;
@@ -25,25 +25,25 @@ import io.github.bincool.utils.commons.StringUtils;
 * 
 * @Description: 
 * <p>
-* ÎÄ¼ş°ïÖúÀà²âÊÔ.
+* æ–‡ä»¶å¸®åŠ©ç±»æµ‹è¯•.
 * </p>
 * <p>
-* ÏêÏ¸ÃèÊö.
+* è¯¦ç»†æè¿°.
 * </p>
 * <p>
-* Ê¾Àı´úÂë.
+* ç¤ºä¾‹ä»£ç .
 * </p>
 *
-* @Author: wchy£¬¼¼Êõ½»Á÷(891946049).
+* @Author: wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
 * 
-* @Date: 2018Äê6ÔÂ22ÈÕ ÏÂÎç4:42:49.
+* @Date: 2018å¹´6æœˆ22æ—¥ ä¸‹åˆ4:42:49.
 * 
 */
 public class FileHelperTest extends BaseTest 
 {
 
 	/**
-	 * »ùÂ·¾¶.
+	 * åŸºè·¯å¾„.
 	 */
 	private String basePath = null;
 
@@ -74,20 +74,20 @@ public class FileHelperTest extends BaseTest
 		String srcPathname = StringUtils.spliceStr("", basePath, "a.txt");
 		String destPathname = StringUtils.spliceStr("", basePath, "b.txt");
 		
-		// ¿½±´ÎÄ¼ş²âÊÔ.
+		// æ‹·è´æ–‡ä»¶æµ‹è¯•.
 		FileHelper.copyFile(srcPathname, destPathname);
 		
-		// É¾³ıÎÄ¼ş²âÊÔ.
+		// åˆ é™¤æ–‡ä»¶æµ‹è¯•.
 		FileHelper.deleteFile(srcPathname);
 		
-		// ÒÆ¶¯ÎÄ¼ş²âÊÔ.
+		// ç§»åŠ¨æ–‡ä»¶æµ‹è¯•.
 		srcPathname = StringUtils.spliceStr("", basePath, "a1.txt");
 		destPathname = StringUtils.spliceStr("", basePath, "b1.txt");
 		
 		FileHelper.createFile(srcPathname);
 		FileHelper.moveFile(srcPathname, destPathname);
 		
-		// Ğ´ÎÄ¼ş²âÊÔ.
+		// å†™æ–‡ä»¶æµ‹è¯•.
 		srcPathname = StringUtils.spliceStr("", basePath, "a11.txt");
 		
 		FileHelper.createFile(srcPathname);
@@ -96,7 +96,7 @@ public class FileHelperTest extends BaseTest
 	}
 	
 	/**
-	 * ²âÊÔFileUtils.
+	 * æµ‹è¯•FileUtils.
 	 * @throws IOException
 	 */
 	@Test

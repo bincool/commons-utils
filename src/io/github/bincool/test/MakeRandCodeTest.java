@@ -2,10 +2,10 @@
 * @FileName: MakeRandCodeTest.java
 * @Package: io.github.bincool.test
 * @Copyright: 2018 bincool.github.io Inc. All Rights Reserved.
-* @Description: MakeRandCodeTest.java: Ëæ»úÂëÉú³ÉÆ÷²âÊÔÀà.
-* @Author wchy£¬¼¼Êõ½»Á÷(891946049).
-* @Date 2018Äê6ÔÂ12ÈÕ ÏÂÎç3:50:56.
-* @Content: ĞÂÔö.
+* @Description: MakeRandCodeTest.java: éšæœºç ç”Ÿæˆå™¨æµ‹è¯•ç±».
+* @Author wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
+* @Date 2018å¹´6æœˆ12æ—¥ ä¸‹åˆ3:50:56.
+* @Content: æ–°å¢.
 * @Version: V1.0.
 */
 package io.github.bincool.test;
@@ -18,25 +18,25 @@ import io.github.bincool.utils.MakeRandCode;
 * 
 * @Description: 
 * <p>
-* Ëæ»úÂëÉú³ÉÆ÷²âÊÔÀà.
+* éšæœºç ç”Ÿæˆå™¨æµ‹è¯•ç±».
 * </p>
 * <p>
-* ÏêÏ¸ÃèÊö.
+* è¯¦ç»†æè¿°.
 * </p>
 * <p>
-* Ê¾Àı´úÂë.
+* ç¤ºä¾‹ä»£ç .
 * </p>
 *
-* @Author: wchy£¬¼¼Êõ½»Á÷(891946049).
+* @Author: wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
 * 
-* @Date: 2018Äê6ÔÂ12ÈÕ ÏÂÎç3:50:56.
+* @Date: 2018å¹´6æœˆ12æ—¥ ä¸‹åˆ3:50:56.
 * 
 */
 public class MakeRandCodeTest extends BaseTest
 {
 	
 	/**
-	 * Ëæ»ú²Ö¿â¶ÔÏó.
+	 * éšæœºä»“åº“å¯¹è±¡.
 	 */
 	private MakeRandCode randCodes;
 
@@ -48,7 +48,7 @@ public class MakeRandCodeTest extends BaseTest
 	{
 		randCodes = new MakeRandCode(1, 0);
 		
-		// ³õÊ¼»¯Ëæ»úÂë²Ö¿â.
+		// åˆå§‹åŒ–éšæœºç ä»“åº“.
 		randCodes.createRandCode(100);
 	}
 

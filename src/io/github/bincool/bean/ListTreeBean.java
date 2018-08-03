@@ -2,10 +2,10 @@
 * @FileName: ListTreeBean.java
 * @Package: io.github.bincool.bean
 * @Copyright: 2018 bincool.github.io Inc. All Rights Reserved.
-* @Description: ListTreeBean.java: ListÊ÷ĞÎÊı¾İ»ùÀàbean.
-* @Author wchy£¬¼¼Êõ½»Á÷(891946049).
-* @Date 2018Äê6ÔÂ12ÈÕ ÏÂÎç8:49:27.
-* @Content: ĞÂÔö.
+* @Description: ListTreeBean.java: Listæ ‘å½¢æ•°æ®åŸºç±»bean.
+* @Author wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
+* @Date 2018å¹´6æœˆ12æ—¥ ä¸‹åˆ8:49:27.
+* @Content: æ–°å¢.
 * @Version: V1.0.
 */
 package io.github.bincool.bean;
@@ -18,99 +18,100 @@ import java.util.List;
 * 
 * @Description: 
 * <p>
-* ListÊ÷ĞÎÊı¾İ»ùÀàbean.
+* Listæ ‘å½¢æ•°æ®åŸºç±»bean.
 * </p>
 * <p>
-* ÏêÏ¸ÃèÊö£ºListÊ÷ĞÎÊı¾İ»ùÀàbean£º²Ëµ¥É­ÁÖ¡¢×éÖ¯½á¹¹Ê÷¡¢¶à¼¶Áª¶¯(Ê¡ÊĞÏØÇøÏç)¡¢·ÖÏúÍÆ¹ã²ã¼¶É­ÁÖ.
+* è¯¦ç»†æè¿°ï¼šListæ ‘å½¢æ•°æ®åŸºç±»beanï¼šèœå•æ£®æ—ã€ç»„ç»‡ç»“æ„æ ‘ã€å¤šçº§è”åŠ¨(çœå¸‚å¿åŒºä¹¡)ã€åˆ†é”€æ¨å¹¿å±‚çº§æ£®æ—.
 * </p>
 * <p>
-* Ê¾Àı´úÂë.
+* ç¤ºä¾‹ä»£ç .
 * </p>
 *
-* @Author: wchy£¬¼¼Êõ½»Á÷(891946049).
+* @Author: wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
 * 
-* @Date: 2018Äê6ÔÂ12ÈÕ ÏÂÎç8:49:27.
+* @Date: 2018å¹´6æœˆ12æ—¥ ä¸‹åˆ8:49:27.
 * 
 */
 @SuppressWarnings("rawtypes")
-public class ListTreeBean<T extends ListTreeBean> implements Serializable
+public class ListTreeBean<T extends ListTreeBean> implements Serializable 
 {
 
 	/**
-	 * ĞòÁĞ°æ±¾ºÅ.
+	 * åºåˆ—ç‰ˆæœ¬å·.
 	 */
 	private static final long serialVersionUID = 1L;
-	
-	 /**
-     * ID.
-     */
-    private String id;
 
-    /**
-     * ¸¸¼¶ID.
-     */
-    private String parentId;
+	/**
+	 * ID.
+	 */
+	private String id;
 
-    /**
-     * º¢×ÓÁĞ±í.
-     */
-    private List<T> childList;
+	/**
+	 * çˆ¶çº§ID.
+	 */
+	private String parentId;
 
-    /**
-     * »ñÈ¡ID.
-     * @return
-     */
-    public String getId()
-    {
-        return id;
-    }
+	/**
+	 * å­©å­åˆ—è¡¨.
+	 */
+	private List<T> childList;
 
-    /**
-     * ÉèÖÃID.
-     * @param id
-     */
-    public void setId(String id)
-    {
-        this.id = id;
-    }
+	/**
+	 * è·å–ID.
+	 * @return
+	 */
+	public String getId() 
+	{
+		return id;
+	}
 
-    /**
-     * »ñÈ¡¸¸¼¶ID.
-     * @return
-     */
-    public String getParentId()
-    {
-        return parentId;
-    }
+	/**
+	 * è®¾ç½®ID.
+	 * @param id
+	 */
+	public void setId(String id) 
+	{
+		this.id = id;
+	}
 
-    /**
-     * ÉèÖÃ¸¸¼¶ID.
-     * @param parentId
-     */
-    public void setParentId(String parentId)
-    {
-        this.parentId = parentId;
-    }
+	/**
+	 * è·å–çˆ¶çº§ID.
+	 * @return
+	 */
+	public String getParentId() 
+	{
+		return parentId;
+	}
 
-    /**
-     * »ñÈ¡º¢×ÓÁĞ±í.
-     * @return
-     */
-    public List<T> getChildList()
-    {
-        return childList;
-    }
+	/**
+	 * è®¾ç½®çˆ¶çº§ID.
+	 * @param parentId
+	 */
+	public void setParentId(String parentId) 
+	{
+		this.parentId = parentId;
+	}
 
-    /**
-     * ÉèÖÃº¢×ÓÁĞ±í.
-     * @param childList
-     */
-    public void setChildList(List<T> childList)
-    {
-        this.childList = childList;
-    }
+	/**
+	 * è·å–å­©å­åˆ—è¡¨.
+	 * @return
+	 */
+	public List<T> getChildList() 
+	{
+		return childList;
+	}
 
-	/* (non-Javadoc)
+	/**
+	 * è®¾ç½®å­©å­åˆ—è¡¨.
+	 * @param childList
+	 */
+	public void setChildList(List<T> childList) 
+	{
+		this.childList = childList;
+	}
+
+	/*
+	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

@@ -2,10 +2,10 @@
 * @FileName: EncodingUtil.java
 * @Package: io.github.bincool.utils
 * @Copyright: 2018 bincool.github.io Inc. All Rights Reserved.
-* @Description: EncodingUtil.java: ×Ö·û±àÂë¹¤¾ßÀà.
-* @Author wchy£¬¼¼Êõ½»Á÷(891946049).
-* @Date 2018Äê8ÔÂ2ÈÕ ÏÂÎç2:10:23.
-* @Content: ĞÂÔö.
+* @Description: EncodingUtil.java: å­—ç¬¦ç¼–ç å·¥å…·ç±».
+* @Author wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
+* @Date 2018å¹´8æœˆ2æ—¥ ä¸‹åˆ2:10:23.
+* @Content: æ–°å¢.
 * @Version: V1.0.
 */
 package io.github.bincool.utils;
@@ -29,38 +29,38 @@ import io.github.bincool.encodingdetect.EncodingDetect;
 * 
 * @Description: 
 * <p>
-* ×Ö·û±àÂë¹¤¾ßÀà.
+* å­—ç¬¦ç¼–ç å·¥å…·ç±».
 * </p>
 * <p>
-* ÏêÏ¸ÃèÊö.
+* è¯¦ç»†æè¿°.
 * </p>
 * <p>
-* Ê¾Àı´úÂë.
+* ç¤ºä¾‹ä»£ç .
 * </p>
 *
-* @Author: wchy£¬¼¼Êõ½»Á÷(891946049).
+* @Author: wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
 * 
-* @Date: 2018Äê8ÔÂ2ÈÕ ÏÂÎç2:10:23.
+* @Date: 2018å¹´8æœˆ2æ—¥ ä¸‹åˆ2:10:23.
 * 
 */
 public class EncodingUtil 
 {
 	
 	/**
-	 * Ë½ÓĞ¹¹Ôìº¯Êı.
+	 * ç§æœ‰æ„é€ å‡½æ•°.
 	 */
 	private EncodingUtil() 
 	{
 	}
 	
 	/**
-	 * ÎÄ¼ş±àÂë×ª»».
+	 * æ–‡ä»¶ç¼–ç è½¬æ¢.
 	 * @param srcPathname
-	 * 		Ô´ÎÄ¼şÂ·¾¶.
+	 * 		æºæ–‡ä»¶è·¯å¾„.
 	 * @param destPathname
-	 * 		×ª»»ºóµÄÎÄ¼şÂ·¾¶.
+	 * 		è½¬æ¢åçš„æ–‡ä»¶è·¯å¾„.
 	 * @param destEncoding
-	 * 		×ª»»ºóµÄÎÄ¼ş±àÂë.
+	 * 		è½¬æ¢åçš„æ–‡ä»¶ç¼–ç .
 	 * @throws IOException
 	 */
 	public static void conversionEncoding(String srcPathname, String destPathname, String destEncoding) throws IOException 
@@ -71,9 +71,9 @@ public class EncodingUtil
 	}
 	
 	/**
-	 * »ñÈ¡ÎÄ¼ş±àÂë.»ñÈ¡Ê§°ÜÔò·µ»ØUTF_8.
+	 * è·å–æ–‡ä»¶ç¼–ç .è·å–å¤±è´¥åˆ™è¿”å›UTF_8.
 	 * @param pathname
-	 * 		ÎÄ¼şÂ·¾¶.
+	 * 		æ–‡ä»¶è·¯å¾„.
 	 * @return
 	 * @throws FileNotFoundException
 	 */
@@ -81,11 +81,11 @@ public class EncodingUtil
 	{
 		String encoding = null;
 		
-		// ¶ÁÈ¡ÎÄ¼şµ½»º´æÊäÈëÁ÷ÖĞ.
+		// è¯»å–æ–‡ä»¶åˆ°ç¼“å­˜è¾“å…¥æµä¸­.
 		InputStream fInputStream = new FileInputStream(pathname);
 		InputStream buffIn = new BufferedInputStream(fInputStream);
 		
-		// »ñÈ¡ÎÄ¼ş±àÂë.
+		// è·å–æ–‡ä»¶ç¼–ç .
 		try 
 		{
 			Charset charset = EncodingDetect.getEncoding(buffIn);

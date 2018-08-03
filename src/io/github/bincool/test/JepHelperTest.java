@@ -2,10 +2,10 @@
 * @FileName: JepHelperTest.java
 * @Package: io.github.bincool.test
 * @Copyright: 2018 bincool.github.io Inc. All Rights Reserved.
-* @Description: JepHelperTest.java: JepHelperÀà²âÊÔ.
-* @Author wchy£¬¼¼Êõ½»Á÷(891946049).
-* @Date 2018Äê7ÔÂ12ÈÕ ÏÂÎç4:59:21.
-* @Content: ĞÂÔö.
+* @Description: JepHelperTest.java: JepHelperç±»æµ‹è¯•.
+* @Author wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
+* @Date 2018å¹´7æœˆ12æ—¥ ä¸‹åˆ4:59:21.
+* @Content: æ–°å¢.
 * @Version: V1.0.
 */
 package io.github.bincool.test;
@@ -22,25 +22,25 @@ import io.github.bincool.utils.JepHelper;
 * 
 * @Description: 
 * <p>
-* JepHelperÀà²âÊÔ.
+* JepHelperç±»æµ‹è¯•.
 * </p>
 * <p>
-* ÏêÏ¸ÃèÊö.
+* è¯¦ç»†æè¿°.
 * </p>
 * <p>
-* Ê¾Àı´úÂë.
+* ç¤ºä¾‹ä»£ç .
 * </p>
 *
-* @Author: wchy£¬¼¼Êõ½»Á÷(891946049).
+* @Author: wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
 * 
-* @Date: 2018Äê7ÔÂ12ÈÕ ÏÂÎç4:59:21.
+* @Date: 2018å¹´7æœˆ12æ—¥ ä¸‹åˆ4:59:21.
 * 
 */
 public class JepHelperTest extends BaseTest 
 {
 	
 	/**
-	 * ¼ÆËã±í´ïÊ½ËùĞèµÄ²ÎÊı.
+	 * è®¡ç®—è¡¨è¾¾å¼æ‰€éœ€çš„å‚æ•°.
 	 */
 	private Map<String, Object> params;
 

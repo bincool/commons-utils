@@ -2,10 +2,10 @@
 * @FileName: EngineEvalTest.java
 * @Package: io.github.bincool.test
 * @Copyright: 2018 bincool.github.io Inc. All Rights Reserved.
-* @Description: EngineEvalTest.java: ÖÇÄÜËã·¨£¬JsÒıÇæÖ´ĞĞ¼ÆËã±í´ïÊ½²âÊÔ.
-* @Author wchy£¬¼¼Êõ½»Á÷(891946049).
-* @Date 2018Äê6ÔÂ12ÈÕ ÏÂÎç10:09:43.
-* @Content: ĞÂÔö.
+* @Description: EngineEvalTest.java: æ™ºèƒ½ç®—æ³•ï¼ŒJså¼•æ“æ‰§è¡Œè®¡ç®—è¡¨è¾¾å¼æµ‹è¯•.
+* @Author wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
+* @Date 2018å¹´6æœˆ12æ—¥ ä¸‹åˆ10:09:43.
+* @Content: æ–°å¢.
 * @Version: V1.0.
 */
 package io.github.bincool.test;
@@ -21,35 +21,35 @@ import io.github.bincool.utils.EngineEvalUtils;
 * 
 * @Description: 
 * <p>
-* ÖÇÄÜËã·¨£¬JsÒıÇæÖ´ĞĞ¼ÆËã±í´ïÊ½²âÊÔ.
+* æ™ºèƒ½ç®—æ³•ï¼ŒJså¼•æ“æ‰§è¡Œè®¡ç®—è¡¨è¾¾å¼æµ‹è¯•.
 * </p>
 * <p>
-* ÏêÏ¸ÃèÊö.
+* è¯¦ç»†æè¿°.
 * </p>
 * <p>
-* Ê¾Àı´úÂë.
+* ç¤ºä¾‹ä»£ç .
 * </p>
 *
-* @Author: wchy£¬¼¼Êõ½»Á÷(891946049).
+* @Author: wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
 * 
-* @Date: 2018Äê6ÔÂ12ÈÕ ÏÂÎç10:09:43.
+* @Date: 2018å¹´6æœˆ12æ—¥ ä¸‹åˆ10:09:43.
 * 
 */
 public class EngineEvalTest extends BaseTest 
 {
 	
 	/**
-	 * 1 ²ÎÊı×¼±¸.
+	 * 1 å‚æ•°å‡†å¤‡.
 	 */
 	private Map<String, Object> params;
 	
 	/**
-	 * 2 ±í´ïÊ½×¼±¸£º¿ÉÍ¨¹ıÊı¾İ²éÑ¯»ò×ÔÖ÷¹¹Ôì£¬ÆäÖĞreturnµÄ±í´ïÊ½ºóĞèÓÃÓ¢ÎÄ¶ººÅ½áÊø(ÓÃÓÚÆ¥Åä¾ßÌå¼ÆËã¹ı³Ì).
-	 * returnÖ÷ÒªÓÃÓÚifÌõ¼ş·ÖÖ§ºÍfunctionº¯ÊıÖ®ÖĞ£¬µ±Ö»ÓĞÒ»¸ö±í´ïÊ½(Ã»ÓĞ·ÖÖ§ÅĞ¶ÏÒ²²»ÊÇº¯Êı)Ê±Ö±½ÓÊéĞ´Ò»ĞĞ±í´ïÊ½¼´¿ÉÎãĞëÌí¼Ó½áÊø·û.
-	 * ÀıÈç£ºformula = "if([³¤]>300){return 5;}else{return 6;}";
-	 * ÀıÈç£ºformula = "function cal() { return 100;}";
+	 * 2 è¡¨è¾¾å¼å‡†å¤‡ï¼šå¯é€šè¿‡æ•°æ®æŸ¥è¯¢æˆ–è‡ªä¸»æ„é€ ï¼Œå…¶ä¸­returnçš„è¡¨è¾¾å¼åéœ€ç”¨è‹±æ–‡é€—å·ç»“æŸ(ç”¨äºåŒ¹é…å…·ä½“è®¡ç®—è¿‡ç¨‹).
+	 * returnä¸»è¦ç”¨äºifæ¡ä»¶åˆ†æ”¯å’Œfunctionå‡½æ•°ä¹‹ä¸­ï¼Œå½“åªæœ‰ä¸€ä¸ªè¡¨è¾¾å¼(æ²¡æœ‰åˆ†æ”¯åˆ¤æ–­ä¹Ÿä¸æ˜¯å‡½æ•°)æ—¶ç›´æ¥ä¹¦å†™ä¸€è¡Œè¡¨è¾¾å¼å³å¯æ¯‹é¡»æ·»åŠ ç»“æŸç¬¦.
+	 * ä¾‹å¦‚ï¼šformula = "if([é•¿]>300){return 5;}else{return 6;}";
+	 * ä¾‹å¦‚ï¼šformula = "function cal() { return 100;}";
 	 */
-	private static final String FORMULA = "[¸öÊı]*[³¤]*[¸ß]";
+	private static final String FORMULA = "[ä¸ªæ•°]*[é•¿]*[é«˜]";
 	
 	
 
@@ -60,9 +60,9 @@ public class EngineEvalTest extends BaseTest
 	public void setUp()
 	{
 		params = new HashMap<>();
-		params.put("¸öÊı", 6);
-		params.put("³¤", 5);
-		params.put("¸ß", 3);
+		params.put("ä¸ªæ•°", 6);
+		params.put("é•¿", 5);
+		params.put("é«˜", 3);
 	}
 
 	/* (non-Javadoc)
@@ -80,11 +80,11 @@ public class EngineEvalTest extends BaseTest
 	@Override
 	public void test() throws Exception
 	{
-		// 3.1 ÖÇÄÜ¼ÆËã½á¹û.
+		// 3.1 æ™ºèƒ½è®¡ç®—ç»“æœ.
 		Object calResult = EngineEvalUtils.smartCal(FORMULA, params);
 		LOGGER.info(calResult);
 		
-		// 3.2 ÖÇÄÜ»ñÈ¡±í´ïÊ½¼ÆËã¹ı³Ì.
+		// 3.2 æ™ºèƒ½è·å–è¡¨è¾¾å¼è®¡ç®—è¿‡ç¨‹.
 		Object formulaResult = EngineEvalUtils.smartFormula(FORMULA, params);
 		LOGGER.info(formulaResult);
 	}

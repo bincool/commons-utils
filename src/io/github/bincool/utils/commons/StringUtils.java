@@ -2,10 +2,10 @@
 * @FileName: StringUtils.java
 * @Package: io.github.bincool.utils.commons
 * @Copyright: 2018 bincool.github.io Inc. All Rights Reserved.
-* @Description: StringUtils.java: ×Ö·û´®¹¤¾ßÀà.
-* @Author wchy£¬¼¼Êõ½»Á÷(891946049).
-* @Date 2018Äê6ÔÂ12ÈÕ ÏÂÎç9:01:03.
-* @Content: ĞÂÔö.
+* @Description: StringUtils.java: å­—ç¬¦ä¸²å·¥å…·ç±».
+* @Author wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
+* @Date 2018å¹´6æœˆ12æ—¥ ä¸‹åˆ9:01:03.
+* @Content: æ–°å¢.
 * @Version: V1.0.
 */
 package io.github.bincool.utils.commons;
@@ -18,25 +18,25 @@ import java.util.regex.Pattern;
 * 
 * @Description: 
 * <p>
-* ×Ö·û´®¹¤¾ßÀà.
+* å­—ç¬¦ä¸²å·¥å…·ç±».
 * </p>
 * <p>
-* ×Ö·û´®¹¤¾ßÀà£º³£¼ûµÄ×Ö·û´®´¦Àí·½·¨.
+* å­—ç¬¦ä¸²å·¥å…·ç±»ï¼šå¸¸è§çš„å­—ç¬¦ä¸²å¤„ç†æ–¹æ³•.
 * </p>
 * <p>
-* Ê¾Àı´úÂë.
+* ç¤ºä¾‹ä»£ç .
 * </p>
 *
-* @Author: wchy£¬¼¼Êõ½»Á÷(891946049).
+* @Author: wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
 * 
-* @Date: 2018Äê6ÔÂ12ÈÕ ÏÂÎç9:01:03.
+* @Date: 2018å¹´6æœˆ12æ—¥ ä¸‹åˆ9:01:03.
 * 
 */
 public class StringUtils 
 {
 	
 	/**
-	 * Ë½ÓĞ¹¹Ôìº¯Êı.
+	 * ç§æœ‰æ„é€ å‡½æ•°.
 	 */
 	private StringUtils() 
 	{
@@ -44,9 +44,9 @@ public class StringUtils
 	}
 	
 	/**
-	 * ×Ö·û´®Îª¿Õ.
+	 * å­—ç¬¦ä¸²ä¸ºç©º.
 	 * @param str
-	 * 		×Ö·û´®.
+	 * 		å­—ç¬¦ä¸².
 	 * @return
 	 */
 	public static boolean isEmpty(String str) 
@@ -55,9 +55,9 @@ public class StringUtils
 	}
 	
 	/**
-	 * ×Ö·û´®²»Îª¿Õ.
+	 * å­—ç¬¦ä¸²ä¸ä¸ºç©º.
 	 * @param str
-	 * 		×Ö·û´®.
+	 * 		å­—ç¬¦ä¸².
 	 * @return
 	 */
 	public static boolean isNotEmpty(String str) 
@@ -66,26 +66,26 @@ public class StringUtils
 	}
 	
 	/**
-     * »ñÈ¡ÕıÔòÌæ»»×Ö·ûÊıÁ¿³¤¶È.
-     * @param str
-     * 		´ıÕıÔòÌæ»»µÄ×Ö·û´®.
-     * @param regex
-     * 		ÕıÔò±í´ïÊ½.
-     * @return
-     */
-    public static int regexCount(String str, String regex) 
-    {
-    	return str.length() - str.replaceAll(regex, "").length();
-    }
+	 * è·å–æ­£åˆ™æ›¿æ¢å­—ç¬¦æ•°é‡é•¿åº¦.
+	 * @param str
+	 * 		å¾…æ­£åˆ™æ›¿æ¢çš„å­—ç¬¦ä¸².
+	 * @param regex
+	 * 		æ­£åˆ™è¡¨è¾¾å¼.
+	 * @return
+	 */
+	public static int regexCount(String str, String regex) 
+	{
+		return str.length() - str.replaceAll(regex, "").length();
+	}
     
-    /**
-     * ÓÃspliceSignÆ´½Ó×Ö·û´®.
-     * @param spliceSign
-     * 		Æ´½Ó·ûºÅ.
-     * @param strs
-     * 		´ıÆ´½ÓµÄ×Ö·û´®Êı×é.
-     * @return
-     */
+	/**
+	 * ç”¨spliceSignæ‹¼æ¥å­—ç¬¦ä¸².
+	 * @param spliceSign
+	 * 		æ‹¼æ¥ç¬¦å·.
+	 * @param strs
+	 * 		å¾…æ‹¼æ¥çš„å­—ç¬¦ä¸²æ•°ç»„.
+	 * @return
+	 */
 	public static String spliceStr(String spliceSign, String ...strs)  
 	{
 		if(EmptyUtils.isEmpty(strs)) 
@@ -108,7 +108,7 @@ public class StringUtils
 	}
 	
 	/**
-	 * ÅĞ¶ÏstrÊÇ·ñÊÇÕıÕûÊı.
+	 * åˆ¤æ–­stræ˜¯å¦æ˜¯æ­£æ•´æ•°.
 	 * @param str
 	 * @return
 	 */
@@ -120,7 +120,7 @@ public class StringUtils
 	}
 	
 	/**
-	 * ÅĞ¶ÏstrÊÇ·ñÊÇ¸ºÕûÊı.
+	 * åˆ¤æ–­stræ˜¯å¦æ˜¯è´Ÿæ•´æ•°.
 	 * @param str
 	 * @return
 	 */
@@ -132,7 +132,7 @@ public class StringUtils
 	}
 	
 	/**
-	 * ÅĞ¶ÏstrÊÇ·ñÊÇÕûÊı.
+	 * åˆ¤æ–­stræ˜¯å¦æ˜¯æ•´æ•°.
 	 * @param str
 	 * @return
 	 */

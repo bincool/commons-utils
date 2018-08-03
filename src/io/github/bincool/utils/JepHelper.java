@@ -2,10 +2,10 @@
 * @FileName: JepHelper.java
 * @Package: io.github.bincool.utils
 * @Copyright: 2018 bincool.github.io Inc. All Rights Reserved.
-* @Description: JepHelper.java: Jep°ïÖúÀà.
-* @Author wchy£¬¼¼Êõ½»Á÷(891946049).
-* @Date 2018Äê7ÔÂ12ÈÕ ÏÂÎç3:18:58.
-* @Content: ĞÂÔö.
+* @Description: JepHelper.java: Jepå¸®åŠ©ç±».
+* @Author wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
+* @Date 2018å¹´7æœˆ12æ—¥ ä¸‹åˆ3:18:58.
+* @Content: æ–°å¢.
 * @Version: V1.0.
 */
 package io.github.bincool.utils;
@@ -25,25 +25,25 @@ import io.github.bincool.utils.commons.StringUtils;
 * 
 * @Description: 
 * <p>
-* Jep°ïÖúÀà(Java expression parser).
+* Jepå¸®åŠ©ç±»(Java expression parser).
 * </p>
 * <p>
-* ÏêÏ¸ÃèÊö.
+* è¯¦ç»†æè¿°.
 * </p>
 * <p>
-* Ê¾Àı´úÂë.
+* ç¤ºä¾‹ä»£ç .
 * </p>
 *
-* @Author: wchy£¬¼¼Êõ½»Á÷(891946049).
+* @Author: wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
 * 
-* @Date: 2018Äê7ÔÂ12ÈÕ ÏÂÎç3:18:58.
+* @Date: 2018å¹´7æœˆ12æ—¥ ä¸‹åˆ3:18:58.
 * 
 */
 public class JepHelper 
 {
 	
 	/**
-	 * Ë½ÓĞ¹¹Ôìº¯Êı.
+	 * ç§æœ‰æ„é€ å‡½æ•°.
 	 */
 	private JepHelper() 
 	{
@@ -51,13 +51,13 @@ public class JepHelper
 	}
 	
 	/**
-	 * ÖÇÄÜ¼ÆËã²»´ø²ÎÊıµÄ±í´ïÊ½µÄÖµ.
+	 * æ™ºèƒ½è®¡ç®—ä¸å¸¦å‚æ•°çš„è¡¨è¾¾å¼çš„å€¼.
 	 * @param formula
-	 * 		±í´ïÊ½.
+	 * 		è¡¨è¾¾å¼.
 	 * @return
-	 * 		¼ÆËã½á¹û.
+	 * 		è®¡ç®—ç»“æœ.
 	 * @throws ParseException
-	 * 		±í´ïÊ½½âÎö¼ÆËãÒì³£.
+	 * 		è¡¨è¾¾å¼è§£æè®¡ç®—å¼‚å¸¸.
 	 */
 	public static Object smartCal(String formula) throws ParseException 
 	{
@@ -66,15 +66,15 @@ public class JepHelper
 	}
 	
 	/**
-	 * ¸ù¾İ²»´ø²ÎÊıµÄÌõ¼ş±í´ïÊ½ÖÇÄÜ¼ÆËã²»´ø²ÎÊıµÄ±í´ïÊ½µÄÖµ.
+	 * æ ¹æ®ä¸å¸¦å‚æ•°çš„æ¡ä»¶è¡¨è¾¾å¼æ™ºèƒ½è®¡ç®—ä¸å¸¦å‚æ•°çš„è¡¨è¾¾å¼çš„å€¼.
 	 * @param formula
-	 * 		Ìõ¼ş±í´ïÊ½.
+	 * 		æ¡ä»¶è¡¨è¾¾å¼.
 	 * @param formula
-	 * 		±í´ïÊ½.
+	 * 		è¡¨è¾¾å¼.
 	 * @return
-	 * 		¼ÆËã½á¹û.
+	 * 		è®¡ç®—ç»“æœ.
 	 * @throws ParseException
-	 * 		±í´ïÊ½½âÎö¼ÆËãÒì³£.
+	 * 		è¡¨è¾¾å¼è§£æè®¡ç®—å¼‚å¸¸.
 	 */
 	public static Object smartCal(String condFormula, String formula) throws ParseException 
 	{
@@ -87,15 +87,15 @@ public class JepHelper
 	}
 		
 	/**
-	 * ÖÇÄÜ¼ÆËã´ø²ÎÊıµÄ±í´ïÊ½µÄÖµ.
+	 * æ™ºèƒ½è®¡ç®—å¸¦å‚æ•°çš„è¡¨è¾¾å¼çš„å€¼.
 	 * @param formula
-	 * 		±í´ïÊ½.
+	 * 		è¡¨è¾¾å¼.
 	 * @param params
-	 * 		²ÎÊı±äÁ¿Öµ.
+	 * 		å‚æ•°å˜é‡å€¼.
 	 * @return
-	 * 		¼ÆËã½á¹û.
+	 * 		è®¡ç®—ç»“æœ.
 	 * @throws ParseException
-	 * 		±í´ïÊ½½âÎö¼ÆËãÒì³£.
+	 * 		è¡¨è¾¾å¼è§£æè®¡ç®—å¼‚å¸¸.
 	 */
 	public static Object smartCal(String formula, Map<String, Object> params) throws ParseException 
 	{
@@ -105,17 +105,17 @@ public class JepHelper
 	}
 	
 	/**
-	 * ¸ù¾İÌõ¼ş±í´ïÊ½ÖÇÄÜ¼ÆËã´ø²ÎÊıµÄ±í´ïÊ½µÄÖµ.
+	 * æ ¹æ®æ¡ä»¶è¡¨è¾¾å¼æ™ºèƒ½è®¡ç®—å¸¦å‚æ•°çš„è¡¨è¾¾å¼çš„å€¼.
 	 * @param formula
-	 * 		Ìõ¼ş±í´ïÊ½.
+	 * 		æ¡ä»¶è¡¨è¾¾å¼.
 	 * @param formula
-	 * 		±í´ïÊ½.
+	 * 		è¡¨è¾¾å¼.
 	 * @param params
-	 * 		²ÎÊı±äÁ¿Öµ.
+	 * 		å‚æ•°å˜é‡å€¼.
 	 * @return
-	 * 		¼ÆËã½á¹û.
+	 * 		è®¡ç®—ç»“æœ.
 	 * @throws ParseException
-	 * 		±í´ïÊ½½âÎö¼ÆËãÒì³£.
+	 * 		è¡¨è¾¾å¼è§£æè®¡ç®—å¼‚å¸¸.
 	 */
 	public static Object smartCal(String condFormula, String formula, Map<String, Object> params) throws ParseException 
 	{
@@ -128,13 +128,13 @@ public class JepHelper
 	}
 	
 	/**
-	 * ²»´ø²ÎÊıµÄÖÇÄÜÌõ¼şÅĞ¶Ï.
+	 * ä¸å¸¦å‚æ•°çš„æ™ºèƒ½æ¡ä»¶åˆ¤æ–­.
 	 * @param condFormula
-	 * 		Ìõ¼ş±í´ïÊ½.
+	 * 		æ¡ä»¶è¡¨è¾¾å¼.
 	 * @return
-	 * 		¼ÆËã½á¹û.
+	 * 		è®¡ç®—ç»“æœ.
 	 * @throws ParseException
-	 * 		±í´ïÊ½½âÎö¼ÆËãÒì³£.
+	 * 		è¡¨è¾¾å¼è§£æè®¡ç®—å¼‚å¸¸.
 	 */
 	private static boolean smartCond(String condFormula) throws ParseException 
 	{
@@ -143,15 +143,15 @@ public class JepHelper
 	}
 	
 	/**
-	 * ´ø²ÎÊıµÄÖÇÄÜÌõ¼şÅĞ¶Ï.
+	 * å¸¦å‚æ•°çš„æ™ºèƒ½æ¡ä»¶åˆ¤æ–­.
 	 * @param condFormula
-	 * 		Ìõ¼ş±í´ïÊ½.
+	 * 		æ¡ä»¶è¡¨è¾¾å¼.
 	 * @param params
-	 * 		²ÎÊı±äÁ¿Öµ.
+	 * 		å‚æ•°å˜é‡å€¼.
 	 * @return
-	 * 		¼ÆËã½á¹û.
+	 * 		è®¡ç®—ç»“æœ.
 	 * @throws ParseException
-	 * 		±í´ïÊ½½âÎö¼ÆËãÒì³£.
+	 * 		è¡¨è¾¾å¼è§£æè®¡ç®—å¼‚å¸¸.
 	 */
 	private static boolean smartCond(String condFormula, Map<String, Object> params) throws ParseException 
 	{
@@ -160,17 +160,17 @@ public class JepHelper
 	}
 	
 	/**
-	 * ´´½¨jep¶ÔÏó£¬µ±params²»Îª¿ÕÊ±£¬Ìî³äºÃ±äÁ¿.
+	 * åˆ›å»ºjepå¯¹è±¡ï¼Œå½“paramsä¸ä¸ºç©ºæ—¶ï¼Œå¡«å……å¥½å˜é‡.
 	 * @param params
-	 * 		²ÎÊı±äÁ¿Öµ.
+	 * 		å‚æ•°å˜é‡å€¼.
 	 * @return
-	 * 		jep¶ÔÏó.
+	 * 		jepå¯¹è±¡.
 	 */
 	private static JEP createJEP(Map<String, Object> params) 
 	{
 		JEP jep = new JEP();
 		
-		// ¿ÕÅĞ¶Ï.
+		// ç©ºåˆ¤æ–­.
 		if (null != params) 
 		{
 			Iterator<Map.Entry<String, Object>> iterator = params.entrySet().iterator();

@@ -2,10 +2,10 @@
 * @FileName: Menu.java
 * @Package: io.github.bincool.test.bean
 * @Copyright: 2018 bincool.github.io Inc. All Rights Reserved.
-* @Description: Menu.java: ²Ëµ¥bean-²âÊÔ.
-* @Author wchy£¬¼¼Êõ½»Á÷(891946049).
-* @Date 2018Äê6ÔÂ12ÈÕ ÏÂÎç9:29:25.
-* @Content: ĞÂÔö.
+* @Description: Menu.java: èœå•bean-æµ‹è¯•.
+* @Author wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
+* @Date 2018å¹´6æœˆ12æ—¥ ä¸‹åˆ9:29:25.
+* @Content: æ–°å¢.
 * @Version: V1.0.
 */
 package io.github.bincool.test.bean;
@@ -17,18 +17,18 @@ import io.github.bincool.bean.ListTreeBean;
 * 
 * @Description: 
 * <p>
-* ²Ëµ¥bean-²âÊÔ.
+* èœå•bean-æµ‹è¯•.
 * </p>
 * <p>
-* ÏêÏ¸ÃèÊö:²âÊÔÓÃµÄbean.
+* è¯¦ç»†æè¿°:æµ‹è¯•ç”¨çš„bean.
 * </p>
 * <p>
-* Ê¾Àı´úÂë.
+* ç¤ºä¾‹ä»£ç .
 * </p>
 *
-* @Author: wchy£¬¼¼Êõ½»Á÷(891946049).
+* @Author: wchyï¼ŒæŠ€æœ¯äº¤æµ(891946049).
 * 
-* @Date: 2018Äê6ÔÂ12ÈÕ ÏÂÎç9:29:25.
+* @Date: 2018å¹´6æœˆ12æ—¥ ä¸‹åˆ9:29:25.
 * 
 */
 @SuppressWarnings("rawtypes")
@@ -36,27 +36,27 @@ public class Menu extends ListTreeBean
 {
 
 	/**
-	 * ĞòÁĞ°æ±¾ºÅ.
+	 * åºåˆ—ç‰ˆæœ¬å·.
 	 */
 	private static final long serialVersionUID = 1L;
 	
 	/**
-	 * ²Ëµ¥Ãû.
+	 * èœå•å.
 	 */
 	private String name;
 	
 	/**
-	 * ²Ëµ¥Á´½Ó.
+	 * èœå•é“¾æ¥.
 	 */
 	private String url;
 	
 	/**
-	 * ²Ëµ¥Í¼±ê.
+	 * èœå•å›¾æ ‡.
 	 */
 	private String icon;
 
 	/**
-	 * ¹¹Ôì·½·¨.
+	 * æ„é€ æ–¹æ³•.
 	 * @param id
 	 * @param parentId
 	 * @param name
@@ -74,7 +74,7 @@ public class Menu extends ListTreeBean
 	}
 
 	/**
-	 * »ñÈ¡name.
+	 * è·å–name.
 	 * @return
 	 *     name.
 	 */
@@ -84,7 +84,7 @@ public class Menu extends ListTreeBean
 	}
 
 	/**
-	 * ÉèÖÃname.
+	 * è®¾ç½®name.
 	 * @param
 	 *     name.
 	 */
@@ -94,7 +94,7 @@ public class Menu extends ListTreeBean
 	}
 
 	/**
-	 * »ñÈ¡url.
+	 * è·å–url.
 	 * @return
 	 *     url.
 	 */
@@ -104,7 +104,7 @@ public class Menu extends ListTreeBean
 	}
 
 	/**
-	 * ÉèÖÃurl.
+	 * è®¾ç½®url.
 	 * @param
 	 *     url.
 	 */
@@ -114,7 +114,7 @@ public class Menu extends ListTreeBean
 	}
 
 	/**
-	 * »ñÈ¡icon.
+	 * è·å–icon.
 	 * @return
 	 *     icon.
 	 */
@@ -124,7 +124,7 @@ public class Menu extends ListTreeBean
 	}
 
 	/**
-	 * ÉèÖÃicon.
+	 * è®¾ç½®icon.
 	 * @param
 	 *     icon.
 	 */
