@@ -4,18 +4,32 @@
 	<groupId>commons-utils</groupId>
 	<artifactId>commons-utils</artifactId>
 	<version>1.0.0</version>
-
+	
+	<repositories>
+		<repository>
+			<id>bincool-maven-repository</id>
+			<name>bincool-maven-repository</name>
+			<url>https://raw.githubusercontent.com/bincool/maven-repository/master/</url>
+		</repository>
+	</repositories>
+	
 	<properties>
 		<!-- junit版本号 -->
 		<junit.version>4.11</junit.version>
 		<!-- log4j版本号 -->
 		<log4j.version>1.2.17</log4j.version>
+		<!-- commons-io版本号 -->
 		<commons-io.version>2.4</commons-io.version>
+		<!-- commons-collections版本号 -->
 		<commons-collections.version>3.2.1</commons-collections.version>
+		<!-- jep版本号 -->
 		<jep.version>2.4.2</jep.version>
+		<!-- 自定义-commons-encoding版本号 -->
+		<commons-encoding.version>1.0.0</commons-encoding.version>
 	</properties>
 
 	<dependencies>
+		<!-- junit工具包 -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -23,7 +37,7 @@
 			<!-- 表示开发的时候引入，发布的时候不会加载此包 -->
 			<!-- <scope>test</scope> -->
 		</dependency>
-		
+
 		<!-- log4j工具包 -->
 		<dependency>
 			<groupId>log4j</groupId>
@@ -51,7 +65,13 @@
 			<artifactId>jep</artifactId>
 			<version>${jep.version}</version>
 		</dependency>
-
+		
+		<!-- 自定义-commons-encoding工具包 -->
+		<dependency>
+			<groupId>io.github.bincool</groupId>
+			<artifactId>commons-encoding</artifactId>
+			<version>${commons-encoding.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>
