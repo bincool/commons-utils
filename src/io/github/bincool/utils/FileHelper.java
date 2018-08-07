@@ -184,8 +184,7 @@ public class FileHelper
 	{
 		File directory = new File(srcDirectory);
 		// 接受真的过滤器，则DirectoryFileFilter.
-		Collection<File> dirs = FileUtils.listFilesAndDirs(directory, FileFilterUtils.falseFileFilter(), FileFilterUtils.directoryFileFilter());
-		return dirs;
+		return FileUtils.listFilesAndDirs(directory, FileFilterUtils.falseFileFilter(), FileFilterUtils.directoryFileFilter());
 	}
 	
 }
