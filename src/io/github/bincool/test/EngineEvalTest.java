@@ -10,9 +10,6 @@
 */
 package io.github.bincool.test;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import io.github.bincool.test.base.BaseTest;
 import io.github.bincool.utils.EngineEvalUtils;
 
@@ -39,11 +36,6 @@ public class EngineEvalTest extends BaseTest
 {
 	
 	/**
-	 * 1 参数准备.
-	 */
-	private Map<String, Object> params;
-	
-	/**
 	 * 2 表达式准备：可通过数据查询或自主构造，其中return的表达式后需用英文逗号结束(用于匹配具体计算过程).
 	 * return主要用于if条件分支和function函数之中，当只有一个表达式(没有分支判断也不是函数)时直接书写一行表达式即可毋须添加结束符.
 	 * 例如：formula = "if([长]>300){return 5;}else{return 6;}";
@@ -59,10 +51,9 @@ public class EngineEvalTest extends BaseTest
 	@Override
 	public void setUp()
 	{
-		params = new HashMap<>();
-		params.put("个数", 6);
-		params.put("长", 5);
-		params.put("高", 3);
+		PARAMS.put("个数", 6);
+		PARAMS.put("长", 5);
+		PARAMS.put("高", 3);
 	}
 
 	/* (non-Javadoc)
@@ -71,7 +62,7 @@ public class EngineEvalTest extends BaseTest
 	@Override
 	public void tearDown()
 	{
-		params = null;
+		PARAMS.clear();
 	}
 
 	/* (non-Javadoc)
@@ -81,11 +72,11 @@ public class EngineEvalTest extends BaseTest
 	public void test() throws Exception
 	{
 		// 3.1 智能计算结果.
-		Object calResult = EngineEvalUtils.smartCal(FORMULA, params);
+		Object calResult = EngineEvalUtils.smartCal(FORMULA, PARAMS);
 		LOGGER.info(calResult);
 		
 		// 3.2 智能获取表达式计算过程.
-		Object formulaResult = EngineEvalUtils.smartFormula(FORMULA, params);
+		Object formulaResult = EngineEvalUtils.smartFormula(FORMULA, PARAMS);
 		LOGGER.info(formulaResult);
 	}
 

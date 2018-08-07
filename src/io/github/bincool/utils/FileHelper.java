@@ -12,9 +12,11 @@ package io.github.bincool.utils;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.filefilter.FileFilterUtils;
 
 import io.github.bincool.utils.commons.StringUtils;
 import io.github.bincool.utils.commons.UtilRuntimeException;
@@ -173,4 +175,17 @@ public class FileHelper
 		return FileUtils.readLines(srcFile);
 	}
 
+	/**
+	 * 查询源路径下所有的文件目录.
+	 * @param srcDirectory
+	 * 		源路径.
+	 */
+	public static Collection<File> listDirs(String srcDirectory) 
+	{
+		File directory = new File(srcDirectory);
+		// 接受真的过滤器，则DirectoryFileFilter.
+		Collection<File> dirs = FileUtils.listFilesAndDirs(directory, FileFilterUtils.falseFileFilter(), FileFilterUtils.directoryFileFilter());
+		return dirs;
+	}
+	
 }

@@ -17,7 +17,7 @@
 		<!-- junit版本号 -->
 		<junit.version>4.11</junit.version>
 		<!-- log4j版本号 -->
-		<log4j.version>1.2.17</log4j.version>
+		<log4j2.version>2.6.2</log4j2.version>
 		<!-- commons-io版本号 -->
 		<commons-io.version>2.4</commons-io.version>
 		<!-- commons-collections版本号 -->
@@ -40,10 +40,15 @@
 
 		<!-- log4j工具包 -->
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>${log4j.version}</version>
-		</dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
 
 		<!-- io工具包 -->
 		<dependency>

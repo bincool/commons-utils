@@ -44,7 +44,7 @@ public class EncodingUtilTest extends BaseTest
 	/**
 	 * 源码路径.
 	 */
-	private static final String SRC_DIR_PATH = System.getProperty("user.dir").replace("commons-utils", "{project-name}\\src");
+	private static final String SRC_DIR_PATH = PROJECT_ROOT_PATH.replace("commons-utils", "{project-name}\\src");
 	
 	/**
 	 * 待转换编码的项目名.

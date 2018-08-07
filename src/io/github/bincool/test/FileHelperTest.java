@@ -41,7 +41,7 @@ import io.github.bincool.utils.commons.StringUtils;
 */
 public class FileHelperTest extends BaseTest 
 {
-
+	
 	/**
 	 * 基路径.
 	 */
@@ -53,7 +53,7 @@ public class FileHelperTest extends BaseTest
 	@Override
 	public void setUp()
 	{
-		basePath = FileHelper.splicePathname(System.getProperty("user.dir") , "file" , "test");
+		basePath = FileHelper.splicePathname(PROJECT_ROOT_PATH , "file" , "test");
 	}
 
 	/* (non-Javadoc)

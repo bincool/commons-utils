@@ -11,8 +11,6 @@
 package io.github.bincool.test;
 
 import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.Map;
 
 import io.github.bincool.test.base.BaseTest;
 import io.github.bincool.utils.JepHelper;
@@ -38,11 +36,6 @@ import io.github.bincool.utils.JepHelper;
 */
 public class JepHelperTest extends BaseTest 
 {
-	
-	/**
-	 * 计算表达式所需的参数.
-	 */
-	private Map<String, Object> params;
 
 	/* (non-Javadoc)
 	 * @see io.github.bincool.test.base.BaseTest#setUp()
@@ -50,8 +43,7 @@ public class JepHelperTest extends BaseTest
 	@Override
 	public void setUp()
 	{
-		params = new HashMap<>();
-		params.put("x", 3);
+		PARAMS.put("x", 3);
 	}
 
 	/* (non-Javadoc)
@@ -60,7 +52,7 @@ public class JepHelperTest extends BaseTest
 	@Override
 	public void tearDown()
 	{
-		params = null;
+		PARAMS.clear();
 	}
 
 	/* (non-Javadoc)
@@ -71,10 +63,10 @@ public class JepHelperTest extends BaseTest
 	{
 		Object obj1 = JepHelper.smartCal("20*5+123");
 		Object obj2 = JepHelper.smartCal("200%2==0", "1/3*25");
-		Object obj3 = JepHelper.smartCal("999999999999999+x", params);
+		Object obj3 = JepHelper.smartCal("999999999999999+x", PARAMS);
 		BigDecimal bg = new BigDecimal(obj3.toString());
 		
-		Object obj4 = JepHelper.smartCal("x!=0", "(2*x^2+x+1)/x", params);
+		Object obj4 = JepHelper.smartCal("x!=0", "(2*x^2+x+1)/x", PARAMS);
 		
 		LOGGER.info(obj1.toString());
 		LOGGER.info(obj2.toString());

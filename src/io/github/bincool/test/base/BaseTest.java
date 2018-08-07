@@ -10,7 +10,12 @@
 */
 package io.github.bincool.test.base;
 
-import org.apache.log4j.Logger;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -40,7 +45,17 @@ public abstract class BaseTest
 	/**
 	 * 日志对象.
 	 */
-	protected static final Logger LOGGER = Logger.getLogger(BaseTest.class);
+	protected static final Logger LOGGER = LogManager.getLogger(BaseTest.class);
+	
+	/**
+	 * 项目根路径.
+	 */
+	protected static final String PROJECT_ROOT_PATH = System.getProperty("user.dir");
+	
+	/**
+	 * 参数map.
+	 */
+	protected static final Map<String, Object> PARAMS = new HashMap<>();
 
 	/**
 	 * @throws java.lang.Exception
